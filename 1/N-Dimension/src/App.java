@@ -2,13 +2,12 @@ import java.lang.Math;
 // Program for computing stuff for higher dimensions
 public class App {
     public static void main(String[] args) throws Exception {
-        Nrectangle rectangle = new Nrectangle(4);
+        int dimNum = 10;
+        new Nrectangle(dimNum);
     }
 }
 class Nrectangle {
-    int dimension;
     Nrectangle(int dimension) {
-        this.dimension = dimension;
         System.out.println("Počet rohů: "+corners(dimension));
         System.out.println("Počet hran: "+edges(dimension));
     }
@@ -16,8 +15,10 @@ class Nrectangle {
         double a = 2.0; double b = dimension;
         int ansCornerCount = (int) Math.pow(a, b); 
         return ansCornerCount;
-    };
+    }
     private int edges(int dimension) {
-        return dimension;
+        double a = dimension; double b = (dimension-1);
+        int ansEdgeCount = (int) (a*Math.pow(2.0, b));
+        return ansEdgeCount;
     }
 }
