@@ -6,7 +6,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         PrintStream out = new PrintStream(new FileOutputStream("output.txt"));
         System.setOut(out);
-        int dimNumMax = 26;
+        int dimNumMax = 21;
         for (int i=0; i<dimNumMax; i++) {
             new Nrectangle(i);
         }
@@ -37,7 +37,7 @@ class Nrectangle {
         if (dimension > 1) {
             double a = 2.0; double b = dimension;
             MathFuncs mfunc = new MathFuncs();
-            int ansFacesCount = (int) (Math.pow(2.0, (b-a))*((double)(mfunc.factorial((int)b)/(mfunc.factorial((int)a)*mfunc.factorial(((int)(b-a)))))));
+            int ansFacesCount = (int) (Math.pow(2.0, (b-a))*((double)(mfunc.factorial((long)b)/(mfunc.factorial((long)a)*mfunc.factorial(((long)(b-a)))))));
             return ansFacesCount;
         } else {
             return 0;
@@ -47,7 +47,7 @@ class Nrectangle {
         if (dimension > 2) {
             double a = 3.0; double b = dimension;
             MathFuncs mfunc = new MathFuncs();
-            int ansFacesCount = (int) (Math.pow(2.0, (b-a))*((double)(mfunc.factorial((int)b)/(mfunc.factorial((int)a)*mfunc.factorial(((int)(b-a)))))));
+            int ansFacesCount = (int) (Math.pow(2.0, (b-a))*((double)(mfunc.factorial((long)b)/(mfunc.factorial((long)a)*mfunc.factorial(((long)(b-a)))))));
             return ansFacesCount;
         } else {
             return 0;
@@ -55,11 +55,11 @@ class Nrectangle {
     }
 }
 class MathFuncs {
-    public int factorial(int number) {
+    public long factorial(long number) {
         if (number == 0) {
             return 1;
         } else {
-            int ansFactorial = (number*factorial(number-1));
+            long ansFactorial = (number*factorial(number-1));
             return ansFactorial;
         }
     }
