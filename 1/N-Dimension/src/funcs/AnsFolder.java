@@ -32,7 +32,7 @@ public class AnsFolder {
         } else {}
         PrintStream out = new PrintStream(new FileOutputStream(file), false);
         System.setOut(out);
-        int dimNumMax = 21;
+        int dimNumMax = 51;
         for (int i=0; i<dimNumMax; i++) {
             new Nrectangle(i);
         }
