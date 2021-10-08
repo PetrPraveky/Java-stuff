@@ -19,21 +19,23 @@ public class AnsFolder {
         if (!rectangleDir.exists()) {
             rectangleDir.mkdirs();
         } else {}
+        // ---------------
         // Hypercube directory
         File hypercubeDir = new File(rectangleDir+"/hypercube");
         if (!hypercubeDir.exists()) {
             hypercubeDir.mkdirs();
         } else {}
+        // Hypercube data file
         File file = new File(hypercubeDir+"/hypercubeData.txt");
         if (!file.exists()) {
             file.createNewFile();
         } else {}
         PrintStream out = new PrintStream(new FileOutputStream(file), false);
         System.setOut(out);
-        // Rectangle output
         int dimNumMax = 21;
         for (int i=0; i<dimNumMax; i++) {
             new Nrectangle(i);
         }
+        // ---------------
     }
 }
