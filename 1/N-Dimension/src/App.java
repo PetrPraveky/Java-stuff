@@ -1,21 +1,27 @@
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.lang.Math;
 // Program for computing stuff for higher dimensions
 public class App {
     public static void main(String[] args) throws Exception {
-        int dimNum = 8;
-        new Nrectangle(dimNum);
+        PrintStream out = new PrintStream(new FileOutputStream("output.txt"));
+        System.setOut(out);
+        int dimNumMax = 26;
+        for (int i=0; i<dimNumMax; i++) {
+            new Nrectangle(i);
+        }
         // MathFuncs math = new MathFuncs();
         // System.out.println(math.factorial(3));
     }
 }
 class Nrectangle {
     Nrectangle(int dimension) {
-        System.out.println("Corner, edge, face and cell for "+dimension+"D hypercube");
         System.out.println("");
+        System.out.println("Corner, edge, face and cell count for "+dimension+"-D hypercube");
         System.out.println("Corner count: "+corners(dimension));
         System.out.println("Edge count: "+edges(dimension));
         System.out.println("Face count: "+faces(dimension));
-        System.out.println("Cell count: "+cells(dimension));
+        System.out.println("Cell (3D) count: "+cells(dimension));
     }
     private int corners(int dimension) {
         double a = 2.0; double b = dimension;
