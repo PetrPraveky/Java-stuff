@@ -4,11 +4,14 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
+import funcs.filesys.tex.TexFileTemp;
 import solids.platonic_solids.*;
 
 //Function for creating folders and files with data
 public class FolderCreate {
     File mainDir = new File(".output");
+    TexFileTemp texFileTemp = new TexFileTemp();
+    int dimNumMax = 21;
     public FolderCreate() throws Exception {
         // Main answer directory
         if (!mainDir.exists()) {
@@ -17,15 +20,14 @@ public class FolderCreate {
         platonicSolidsOutputs();
     }
     private void platonicSolidsOutputs() throws Exception {
-        int dimNumMax = 51;
         // N-D rectangle directory
         File platDir = new File(mainDir+"/platonic_solids");
         if (!platDir.exists()) {
             platDir.mkdirs();
         } else {}
-        ncubeOutput(platDir, dimNumMax);
+        ncubeOutput(platDir);
     }
-    private void ncubeOutput(File file, int num) throws Exception {
+    private void ncubeOutput(File file) throws Exception {
         // Ncube data file & folder
         File hypercubeDir = new File(file+"/ncube");
         if (!hypercubeDir.exists()) {
@@ -38,8 +40,11 @@ public class FolderCreate {
         PrintStream out = new PrintStream(new FileOutputStream(ncubeFile), false);
         System.setOut(out);
         // .tex file creation
-        for (int i=0; i<num; i++) {
+        texFileTemp.texFileBeg();
+        texFileTemp.texFileTitle("N-Dimensional cubes");
+        for (int i=0; i<dimNumMax; i++) {
             new NcubeOut(i);
         }
+        System.out.println("\\end{document}");
     }
 }

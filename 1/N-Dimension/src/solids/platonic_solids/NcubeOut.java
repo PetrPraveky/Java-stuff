@@ -10,7 +10,9 @@ public class NcubeOut {
         BigInteger faceNum = new BigInteger(nCubeAlgs.faces(Integer.toString(dimension)));
         BigInteger cellNum = new BigInteger(nCubeAlgs.cells(Integer.toString(dimension)));
 
-        System.out.println("----------------------------------------------------------------------\\linebreak");
+        
+
+        // System.out.println("----------------------------------------------------------------------\\linebreak");
         System.out.println("Vertices, edges, faces and cells count for "+dimension+"-D cube:\\linebreak");
         System.out.println("- Vertices count:    "+String.valueOf(vertNum));
         System.out.println("- Edges count:       "+String.valueOf(edgNum));
