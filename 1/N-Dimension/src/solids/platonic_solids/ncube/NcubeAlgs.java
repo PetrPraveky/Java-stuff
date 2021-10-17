@@ -1,32 +1,11 @@
-package solids.platonic_solids;
+package solids.platonic_solids.ncube;
+
+import funcs.math.*;
 import java.math.BigInteger;
-import funcs.math.MathFuncs;
-// Class for hypercubes in n-dimensions
-public class Ncube {
-    public Ncube(int dimension) {
-        String name = "";
-        if (dimension == 2) {
-            name = " (Square)";
-        } else if (dimension == 3) {
-            name = " (Cube)";
-        } else if (dimension == 4) {
-            name = " (Hypercube)";
-        } else {}
-        // System.out.println("\\title{"+dimension+"-CUBE"+name+":}");
-        // System.out.println("\\maketitle");
-        // System.out.println("----------------------------------------------------------------------\\linebreak");
-        // System.out.println("Vertices, edges, faces and cells count for "+dimension+"-D cube:\\linebreak");
-        System.out.println("- Vertices count:    "+vertices(Integer.toString(dimension)));
-        System.out.println("- Edges count:       "+edges(Integer.toString(dimension)));
-        System.out.println("- Faces count:       "+faces(Integer.toString(dimension)));
-        System.out.println("- Cells (3D) count:  "+cells(Integer.toString(dimension)));
-        System.out.println("Shape values for "+dimension+"-D cube");
-        System.out.println("- Volume:            a"+dimension);
-        System.out.println("- Surface area (2D): "+faces(Integer.toString(dimension))+"a2");
-        System.out.println("\\newpage");
-    }
+
+public class NcubeAlgs {
     // Function for counting vertices in higher dimensions
-    private String vertices(String dimension) {
+    public String vertices(String dimension) {
         String a = "2";
         MathFuncs mfunc = new MathFuncs();
         if (dimension.equals("0")) {
@@ -37,7 +16,7 @@ public class Ncube {
         }
     }
     // Function for counting edges in higher dimensions
-    private String edges(String dimension) {
+    public String edges(String dimension) {
         String a = dimension; String b = (String.valueOf((Integer.parseInt(dimension)-1)));
         MathFuncs mfunc = new MathFuncs();
         BigInteger bigA = new BigInteger(a); BigInteger ansEdgeCount = new BigInteger("0");
@@ -64,7 +43,7 @@ public class Ncube {
         }
     }
     // Function for counting 3D cells in higher dimensions
-    private String cells(String dimension) {
+    public String cells(String dimension) {
         MathFuncs mfunc = new MathFuncs();
         if (dimension.equals("0") || dimension.equals("1") || dimension.equals("2")) {
             return "0";
