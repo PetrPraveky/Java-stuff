@@ -4,16 +4,26 @@ import funcs.math.MathFuncs;
 // Class for hypercubes in n-dimensions
 public class Ncube {
     public Ncube(int dimension) {
-        System.out.println("----------------------------------------------------------------------");
-        System.out.println("Vertices, edges, faces and cells count for "+dimension+"-D cube:");
+        String name = "";
+        if (dimension == 2) {
+            name = " (Square)";
+        } else if (dimension == 3) {
+            name = " (Cube)";
+        } else if (dimension == 4) {
+            name = " (Hypercube)";
+        } else {}
+        // System.out.println("\\title{"+dimension+"-CUBE"+name+":}");
+        // System.out.println("\\maketitle");
+        // System.out.println("----------------------------------------------------------------------\\linebreak");
+        // System.out.println("Vertices, edges, faces and cells count for "+dimension+"-D cube:\\linebreak");
         System.out.println("- Vertices count:    "+vertices(Integer.toString(dimension)));
         System.out.println("- Edges count:       "+edges(Integer.toString(dimension)));
         System.out.println("- Faces count:       "+faces(Integer.toString(dimension)));
         System.out.println("- Cells (3D) count:  "+cells(Integer.toString(dimension)));
         System.out.println("Shape values for "+dimension+"-D cube");
-        System.out.println("- Volume:            a^"+dimension);
-        System.out.println("- Surface area (2D): "+faces(Integer.toString(dimension))+"a^2");
-        // System.out.println("test - ");
+        System.out.println("- Volume:            a"+dimension);
+        System.out.println("- Surface area (2D): "+faces(Integer.toString(dimension))+"a2");
+        System.out.println("\\newpage");
     }
     // Function for counting vertices in higher dimensions
     private String vertices(String dimension) {
