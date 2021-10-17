@@ -1,4 +1,4 @@
-package funcs.platonic_solids;
+package solids.platonic_solids;
 import java.math.BigInteger;
 import funcs.math.MathFuncs;
 // Class for hypercubes in n-dimensions
