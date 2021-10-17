@@ -4,10 +4,11 @@ import java.util.Date;
 
 public class TexFileTemp {
     public void texFileBeg() {
-        System.out.println("\\documentclass[a4paper,12pt]{article}\n");
+        System.out.println("\\documentclass[a4paper,10pt]{article}\n");
         System.out.println("\\renewcommand{\\familydefault}{\\sfdefault}\n");
 
         System.out.println("\\usepackage[a4paper, inner=1.7cm, outer=2.7cm, top=2cm, bottom=2cm, bindingoffset=1.2cm]{geometry}");
+        System.out.println("\\usepackage{amsmath}");
         System.out.println("\\usepackage{multicol}");
         System.out.println("\\usepackage[english]{babel}");
         System.out.println("\\usepackage{blindtext}\n");
