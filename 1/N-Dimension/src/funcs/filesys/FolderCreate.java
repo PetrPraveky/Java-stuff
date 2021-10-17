@@ -41,7 +41,7 @@ public class FolderCreate {
         System.setOut(out);
         // .tex file creation
         texFileTemp.texFileBeg();
-        texFileTemp.texFileTitle("N-Dimensional cubes");
+        texFileTemp.texFileTitle("N-Dimensional Cubes");
         for (int i=0; i<dimNumMax; i++) {
             new NcubeOut(i);
         }
