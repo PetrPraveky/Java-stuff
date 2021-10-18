@@ -3,6 +3,7 @@ package funcs.filesys.tex;
 import java.math.BigInteger;
 
 import funcs.math.MathFuncs;
+import java.lang.Math;
 import solids.platonic_solids.ncube.NcubeAlgs;
 
 public class TexCommands {
@@ -96,5 +97,28 @@ public class TexCommands {
             System.out.println("\\end{flushright}");
             System.out.println("\\end{multicols}");
         }
-    } 
+    }
+    public void tex2DiagonalCommand(int dimension, int r, String rString) {
+        NcubeAlgs nCubeAlgs = new NcubeAlgs();
+        String name = "Diagonal";
+        System.out.println("\\begin{multicols}{2}");
+        System.out.println("- "+name+rString+":");
+        System.out.println("\\columnbreak");
+        System.out.println("\\begin{flushright}");
+        if (r==0) {
+            if ((Math.sqrt(dimension)-Math.floor(Math.sqrt(dimension)))==0) {
+                System.out.println("$a\\sqrt{"+dimension+"}\\quad;\\quad"+((int)(Math.sqrt(dimension)))+"a$");
+            } else {
+                System.out.println("$a\\sqrt{"+dimension+"}$");
+            }
+        } else {
+            double ans = nCubeAlgs.diagonalAlg(dimension, r);
+            if (ans==Math.floor(ans)) {
+                
+            }
+            System.out.println("$"+r+"$");
+        }
+        System.out.println("\\end{flushright}");
+        System.out.println("\\end{multicols}");  
+    }
 }
