@@ -42,10 +42,12 @@ public class NcubeOut {
                 texCommands.tex2Surface(dimension, 1, " for side lenght $a = 1$");
                 texCommands.tex2Surface(dimension, 2, " for side lenght $a = 2$");
                 // Diagonal
-                texCommands.tex2DiagonalCommand(dimension, 0, "");
                 System.out.println("\\textbf{");
-                System.out.println(String.format("%.7g%n", nCubeAlgs.diagonalAlg(dimension, 1)));
-                System.out.println("\\}");
+                texCommands.tex2DiagonalCommand(dimension, 0, "");
+                System.out.println("}");
+                texCommands.tex2DiagonalCommand(dimension, 1, " for side lenght $a = 1$");
+                texCommands.tex2DiagonalCommand(dimension, 2, " for side lenght $a = 2$");
+                // System.out.println(String.format("%.7g%n", nCubeAlgs.diagonalAlg(dimension, 1)));
             }
         } else {
             System.out.println("\\begin{multicols}{2}");

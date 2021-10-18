@@ -114,9 +114,10 @@ public class TexCommands {
         } else {
             double ans = nCubeAlgs.diagonalAlg(dimension, r);
             if (ans==Math.floor(ans)) {
-                
+                System.out.println("$"+r+"\\sqrt{"+dimension+"}\\quad;\\quad"+((int)ans)+"$");
+            } else {
+                System.out.println("$"+r+"\\sqrt{"+dimension+"}\\quad;\\quad"+String.format("%.7g%n", ans)+"...$");
             }
-            System.out.println("$"+r+"$");
         }
         System.out.println("\\end{flushright}");
         System.out.println("\\end{multicols}");  
