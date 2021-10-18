@@ -14,13 +14,13 @@ public class NcubeOut {
         BigInteger cellNum = new BigInteger(nCubeAlgs.cells(Integer.toString(dimension)));
         texCommands.texTitleOneNCubeCommand(dimension);
         // Data
-        texCommands.texMiddleLine(0.2);
+        texCommands.texMiddleLine(1);
         texCommands.texTitleDataNCubeCommand(dimension);
         texCommands.tex2ColumnDataNCubeCommand(String.valueOf(vertNum), "Vertices");
         texCommands.tex2ColumnDataNCubeCommand(String.valueOf(edgNum), "Edges");
         texCommands.tex2ColumnDataNCubeCommand(String.valueOf(faceNum), "Faces");
         texCommands.tex2ColumnDataNCubeCommand(String.valueOf(cellNum), "Cells");
-        texCommands.texMiddleLine(0.4);
+        texCommands.texMiddleLine(0.2);
         // Geometric values
         texCommands.texTitleValNCubeCommand(dimension);
         if (dimension != 0) {
