@@ -57,4 +57,13 @@ public class NcubeAlgs {
             return String.valueOf(bigAnsFacesCount);
         }
     }
+    // Default function for count of n-1 dimensional objects
+    public String cellAlgDef(String dimension) {
+        MathFuncs mfunc = new MathFuncs();
+        String a = String.valueOf(Integer.valueOf(dimension)-1); String b = dimension;
+        BigInteger bigA = new BigInteger(String.valueOf(Integer.valueOf(dimension)-1)); BigInteger bigB = new BigInteger(b);
+        BigInteger bigAnsCellAlgDef = new BigInteger("0");
+        bigAnsCellAlgDef = (new BigInteger(mfunc.bigPower("2", String.valueOf(bigB.subtract(bigA))))).multiply((new BigInteger(mfunc.bigFactorial(b))).divide((new BigInteger(mfunc.bigFactorial(a))).multiply(new BigInteger(mfunc.bigFactorial(String.valueOf(bigB.subtract(bigA)))))));
+        return String.valueOf(bigAnsCellAlgDef);
+    }
 }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.10.16)  17 OCT 2021 21:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.10.16)  18 OCT 2021 08:21
 entering extended mode
 **./template.tex
 (template.tex
@@ -272,23 +272,30 @@ LaTeX3 Info: Defining command \setlipsum with sig. '+m' on line 357.
 
 
 (C:\Users\mrpar\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
+Runaway argument?
+! Paragraph ended before \@fileswith@ptions was complete.
+<to be read again> 
+                   \par 
+l.13 
+     
+? 
 (template.aux)
 \openout1 = `template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -326,25 +333,25 @@ LaTeX Font Info:    ... okay on input line 12.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 17.
+(Font)              <14.4> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 17.
+(Font)              <7> on input line 19.
 [1
 
 {C:/Users/mrpar/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3]
 (template.aux) ) 
 Here is how much of TeX's memory you used:
- 2428 strings out of 479334
- 41455 string characters out of 2857083
- 452919 words of memory out of 3000000
- 19896 multiletter control sequences out of 15000+200000
- 406161 words of font info for 36 fonts, out of 3000000 for 9000
+ 2429 strings out of 479334
+ 41471 string characters out of 2857083
+ 452921 words of memory out of 3000000
+ 19897 multiletter control sequences out of 15000+200000
+ 406455 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,7n,89p,222b,220s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 81i,7n,89p,222b,257s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmss12.pfb><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on template.pdf (3 pages, 27839 bytes).
+Output written on template.pdf (3 pages, 33014 bytes).
 PDF statistics:
  20 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -1,6 +1,9 @@
 package funcs.filesys.tex;
 
+import java.math.BigInteger;
+
 import funcs.math.MathFuncs;
+import solids.platonic_solids.ncube.NcubeAlgs;
 
 public class TexCommands {
     MathFuncs math = new MathFuncs();
@@ -27,7 +30,7 @@ public class TexCommands {
         System.out.println("- "+name+" count:");
         System.out.println("\\columnbreak");
         System.out.println("\\begin{flushright}");
-        System.out.println(count);
+        System.out.println("$"+count+"$");
         System.out.println("\\end{flushright}");
         System.out.println("\\end{multicols}");
     }
@@ -43,9 +46,55 @@ public class TexCommands {
         if (r==0) {
             System.out.println("$a^{"+dimension+"}$");
         } else {
-            System.out.println(math.bigPower(String.valueOf(r), String.valueOf(dimension)));
+            System.out.println("$"+math.bigPower(String.valueOf(r), String.valueOf(dimension))+"$");
         }
         System.out.println("\\end{flushright}");
         System.out.println("\\end{multicols}");
-    }        
+    }   
+    public void tex2Surface(int dimension, int r, String rString) {
+        NcubeAlgs nCubeAlgs = new NcubeAlgs();
+        String name = "Surface";
+        if (dimension == 1) {
+            name = "Lenght";
+        } else if (dimension == 2) {
+            name = "Perimeter";
+        }
+        if (dimension == 1) {
+            System.out.println("\\begin{multicols}{2}");
+            System.out.println("- "+name+rString+":");
+            System.out.println("\\columnbreak");
+            System.out.println("\\begin{flushright}");
+            if (r==0) {
+                System.out.println("$a$");
+            } else {
+                System.out.println("$"+r+"$");
+            }
+            System.out.println("\\end{flushright}");
+            System.out.println("\\end{multicols}");          
+        } else if (dimension == 2) {
+            System.out.println("\\begin{multicols}{2}");
+            System.out.println("- "+name+rString+":");
+            System.out.println("\\columnbreak");
+            System.out.println("\\begin{flushright}");
+            if (r==0) {
+                System.out.println("$"+nCubeAlgs.cellAlgDef(String.valueOf(dimension))+"a$");
+            } else {
+                System.out.println("$"+String.valueOf((new BigInteger(nCubeAlgs.cellAlgDef(String.valueOf(dimension)))).multiply(new BigInteger(math.bigPower(String.valueOf(new BigInteger(String.valueOf(r))), String.valueOf(new BigInteger(String.valueOf((dimension-1))))))))+"$");
+            }
+            System.out.println("\\end{flushright}");
+            System.out.println("\\end{multicols}");             
+        } else {
+            System.out.println("\\begin{multicols}{2}");
+            System.out.println("- "+name+rString+":");
+            System.out.println("\\columnbreak");
+            System.out.println("\\begin{flushright}");
+            if (r==0) {
+                System.out.println("$"+nCubeAlgs.cellAlgDef(String.valueOf(dimension))+"a^{"+(dimension-1)+"}$");
+            } else {
+                System.out.println("$"+String.valueOf((new BigInteger(nCubeAlgs.cellAlgDef(String.valueOf(dimension)))).multiply(new BigInteger(math.bigPower(String.valueOf(new BigInteger(String.valueOf(r))), String.valueOf(new BigInteger(String.valueOf((dimension-1))))))))+"$");
+            }
+            System.out.println("\\end{flushright}");
+            System.out.println("\\end{multicols}");
+        }
+    } 
 }
