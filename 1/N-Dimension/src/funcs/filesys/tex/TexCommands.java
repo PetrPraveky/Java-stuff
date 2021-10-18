@@ -26,9 +26,14 @@ public class TexCommands {
     public void texTitleValNCubeCommand(int dimension) {
         System.out.println("\\large{\\textbf{Solid values for "+dimension+"-Cube:}}");
     }
+    public void texMiddleLine(double size) {
+        System.out.println("\\centerline{\\par\\noindent\\rule{0.975\\textwidth}{"+size+"pt}}");
+    }
     public void tex2ColumnDataNCubeCommand(String count, String name) {
         System.out.println("\\begin{multicols}{2}");
+        System.out.println("\\begin{flushleft}");
         System.out.println("- "+name+" count:");
+        System.out.println("\\end{flushleft}");
         System.out.println("\\columnbreak");
         System.out.println("\\begin{flushright}");
         System.out.println("$"+count+"$");
@@ -41,7 +46,9 @@ public class TexCommands {
             name = "Area";
         } else {}
         System.out.println("\\begin{multicols}{2}");
+        System.out.println("\\begin{flushleft}");
         System.out.println("- "+name+rString+":");
+        System.out.println("\\end{flushleft}");
         System.out.println("\\columnbreak");
         System.out.println("\\begin{flushright}");
         if (r==0) {
@@ -62,7 +69,9 @@ public class TexCommands {
         }
         if (dimension == 1) {
             System.out.println("\\begin{multicols}{2}");
+            System.out.println("\\begin{flushleft}");
             System.out.println("- "+name+rString+":");
+            System.out.println("\\end{flushleft}");
             System.out.println("\\columnbreak");
             System.out.println("\\begin{flushright}");
             if (r==0) {
@@ -74,7 +83,9 @@ public class TexCommands {
             System.out.println("\\end{multicols}");          
         } else if (dimension == 2) {
             System.out.println("\\begin{multicols}{2}");
+            System.out.println("\\begin{flushleft}");
             System.out.println("- "+name+rString+":");
+            System.out.println("\\end{flushleft}");
             System.out.println("\\columnbreak");
             System.out.println("\\begin{flushright}");
             if (r==0) {
@@ -86,7 +97,9 @@ public class TexCommands {
             System.out.println("\\end{multicols}");             
         } else {
             System.out.println("\\begin{multicols}{2}");
+            System.out.println("\\begin{flushleft}");
             System.out.println("- "+name+rString+":");
+            System.out.println("\\end{flushleft}");
             System.out.println("\\columnbreak");
             System.out.println("\\begin{flushright}");
             if (r==0) {
@@ -102,7 +115,9 @@ public class TexCommands {
         NcubeAlgs nCubeAlgs = new NcubeAlgs();
         String name = "Diagonal";
         System.out.println("\\begin{multicols}{2}");
+        System.out.println("\\begin{flushleft}");
         System.out.println("- "+name+rString+":");
+        System.out.println("\\end{flushleft}");
         System.out.println("\\columnbreak");
         System.out.println("\\begin{flushright}");
         if (r==0) {

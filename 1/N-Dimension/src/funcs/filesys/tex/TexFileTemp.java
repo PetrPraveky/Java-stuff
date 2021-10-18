@@ -23,4 +23,21 @@ public class TexFileTemp {
         System.out.println("\\maketitle");
         System.out.println("\\newpage");
     }
+    public void texFileInfoPageNcube() {
+        System.out.println("\\centerline{\\Large{\\textbf{N-Dimensional Cube Information}}}");
+        // System.out.println("\\vspace{\\baselineskip}");
+        // Terminology
+        System.out.println("\\begin{flushleft}");
+        System.out.println("\\large{\\textbf{Base Terminology:}}\\newline");
+        System.out.println("\\large{haha}\\newline");
+        System.out.println("\\large{For Dimension $n$; Side lenght $a$}\\newline");
+        // System.out.println("\\vspace{\\baselineskip}");
+        // Equations
+        System.out.println("\\textbf{Used Equations:}\\newline");
+        System.out.println("\\large{- Equation for verticies count:}\\quad\\quad$2^{n}$\\newline");
+        System.out.println("\\large{- Equation for edge count:}\\quad\\quad$2^{n}$\\newline");
+        System.out.println("\\end{flushleft}");
+
+        System.out.println("\\newpage");
+    }
 }

@@ -12,13 +12,15 @@ public class NcubeOut {
         BigInteger edgNum = new BigInteger(nCubeAlgs.edges(Integer.toString(dimension)));
         BigInteger faceNum = new BigInteger(nCubeAlgs.faces(Integer.toString(dimension)));
         BigInteger cellNum = new BigInteger(nCubeAlgs.cells(Integer.toString(dimension)));
-        // Data
         texCommands.texTitleOneNCubeCommand(dimension);
+        // Data
+        texCommands.texMiddleLine(0.2);
         texCommands.texTitleDataNCubeCommand(dimension);
         texCommands.tex2ColumnDataNCubeCommand(String.valueOf(vertNum), "Vertices");
         texCommands.tex2ColumnDataNCubeCommand(String.valueOf(edgNum), "Edges");
         texCommands.tex2ColumnDataNCubeCommand(String.valueOf(faceNum), "Faces");
         texCommands.tex2ColumnDataNCubeCommand(String.valueOf(cellNum), "Cells");
+        texCommands.texMiddleLine(0.4);
         // Geometric values
         texCommands.texTitleValNCubeCommand(dimension);
         if (dimension != 0) {
@@ -35,19 +37,20 @@ public class NcubeOut {
                 System.out.println("}");
                 texCommands.tex2Volume(dimension, 1, " for side lenght $a = 1$");
                 texCommands.tex2Volume(dimension, 2, " for side length $a = 2$");
+                texCommands.texMiddleLine(0.2);
                 // Surface
                 System.out.println("\\textbf{");
                 texCommands.tex2Surface(dimension, 0, "");
                 System.out.println("}");
                 texCommands.tex2Surface(dimension, 1, " for side lenght $a = 1$");
                 texCommands.tex2Surface(dimension, 2, " for side lenght $a = 2$");
+                texCommands.texMiddleLine(0.2);
                 // Diagonal
                 System.out.println("\\textbf{");
                 texCommands.tex2DiagonalCommand(dimension, 0, "");
                 System.out.println("}");
                 texCommands.tex2DiagonalCommand(dimension, 1, " for side lenght $a = 1$");
                 texCommands.tex2DiagonalCommand(dimension, 2, " for side lenght $a = 2$");
-                // System.out.println(String.format("%.7g%n", nCubeAlgs.diagonalAlg(dimension, 1)));
             }
         } else {
             System.out.println("\\begin{multicols}{2}");

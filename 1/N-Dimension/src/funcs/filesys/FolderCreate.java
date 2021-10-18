@@ -40,8 +40,11 @@ public class FolderCreate {
         PrintStream out = new PrintStream(new FileOutputStream(ncubeFile), false);
         System.setOut(out);
         // .tex file creation
+        // Title page
         texFileTemp.texFileBeg();
         texFileTemp.texFileTitle("N-Dimensional Cubes");
+        // Info Page / Pages
+        texFileTemp.texFileInfoPageNcube();
         for (int i=0; i<dimNumMax; i++) {
             new NcubeOut(i);
         }

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Function for LaTeX implementation
-public class TexFile {
+public class archTexFile {
     String name;
     List<String> options;
     List<String> args;
     StringBuilder command;
-    public TexFile(String name, String... args) {
+    public archTexFile(String name, String... args) {
         this.name = name;
         this.options = new ArrayList<>();
         this.args = new ArrayList<>();
@@ -17,7 +17,7 @@ public class TexFile {
             this.args.add(arg);
         }
     }
-    public TexFile addOption(String option) {
+    public archTexFile addOption(String option) {
         options.add(option);
         return this;
     }
