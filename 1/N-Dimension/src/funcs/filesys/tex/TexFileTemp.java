@@ -156,7 +156,7 @@ public class TexFileTemp {
                 to higher dimensions. So we can describe it by infinite series like this:} \\newline
             \\null\\centerline{
                 \\Large{
-                    $(R_n)^{\\infty}_{n=1} \\quad ; \\quad R_{n+1}=\\sqrt{R_n^{2}+a^{2}} \\quad ; \\quad R_1 = a^{2}$
+                    $(D_n)^{\\infty}_{n=1} \\quad ; \\quad D_{n+1}=\\sqrt{D_n^{2}+a^{2}} \\quad ; \\quad D_1 = a^{2}$
                 }
             }
         """);
