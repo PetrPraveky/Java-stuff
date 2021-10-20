@@ -53,9 +53,9 @@ public class TexFileTemp {
         System.out.println("""
             \\null\\large{
                 \\quad By \"leght a\" or \"side lenght a\" I mean specific lenght of edge. By using volume I mean amount of space inside $n$ dimensional object.
-                Because here we are talking about cubes, \"Volume\" (or \"Area\" in 2D) is computed by taking one edge and giving it to the power of $n$. Volume can't be
-                in 0D and 1D, because it will say nothing useful. \"Surface\" (or \"Perimeter\" that is used in square) is meant the sum of volumes of $n-1$ dimension objects. 
-                Surface can't be used in 0D, because it will say nothing useful. Lastly \"Diagonal\" is line, that connects two vertices agains each other. If we want
+                Because here we are talking about cubes, \"Volume\" (or \"Area\" in 2D) is computed by taking one edge and giving it to the power of $n$. I didn't write volume for
+                in 0D and 1D, because it is obvious. \"Surface\" (or \"Perimeter\" that is used in square) is meant the sum of volumes of $n-1$ dimension objects. 
+                I didn't write surface in 0D, because it is obvious. Lastly \"Diagonal\" is line, that connects two vertices agains each other. If we want
                 diagonal of cube, 3D object, we must connect vertices, that aren't at the same face. This also applies to higher dimensions. Diagonal is non-existent in 1D and 0D.
             }
         """);
@@ -119,17 +119,44 @@ public class TexFileTemp {
         """);
         System.out.println("\\vspace{-5pt}");
         System.out.println("""
-            \\newpage
             \\null\\large{
-                \\quad We can easily modify it to compute the number of faces \"$F$\" and number of cells \"$C$\". Again $n$ stands for dimension number So the modified formulas look like this:} \\newline
+                \\quad Equation for volume \"$V_n$\" comes from assumption, that if we put lenght $a$ to the power on $n$, we'll get amount of inner space of $n$ dimensional object.
+                So the equation looks like this:} \\newline
             \\null\\centerline{
                 \\Large{
-                    $F = 2^{n-2}\\times(\\frac{n!}{2!(n-2)!})$
+                    $V_n = a^{n}$
                 }
-            }\\newline
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+            \\null\\large{
+                \\quad Equation for surface \"$S_n$\" comes from assumption, that surface means sum of $n-1$ dimensional parts of $n$ dimensional object. So
+                surface of Hypercube (4D cube) is equal to sum of volumes of 3D cubes. This equation is little more complex and it uses $X$, 
+                what it means we already established with $m = n-1$:} \\newline
             \\null\\centerline{
                 \\Large{
-                    $C = 2^{n-3}\\times(\\frac{n!}{2!(n-3)!})$
+                    $S_n = X\\times{a^{n-1}}$
+                }
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+            \\null\\large{
+                \\quad And we can simplify it like this:} \\newline
+            \\null\\centerline{
+                \\Large{
+                    $S_n = 2\\times{(\\frac{n!}{(n-1)!})}\\times{a^{n-1}}$
+                }
+            }
+        """);
+        System.out.println("""
+            \\null\\large{
+                \\quad Again, equation for diagonal \"$D_n$\" of $n$ dimensional object comes from assumption that \"Pythagorean theorem\" can be extended
+                to higher dimensions. So we can describe it by infinite series like this:} \\newline
+            \\null\\centerline{
+                \\Large{
+                    $(R_n)^{\\infty}_{n=1} \\quad ; \\quad R_{n+1}=\\sqrt{R_n^{2}+a^{2}} \\quad ; \\quad R_1 = a^{2}$
                 }
             }
         """);
