@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.10.16)  20 OCT 2021 21:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.10.16)  21 OCT 2021 13:37
 entering extended mode
 **./ncubeData.tex
 (ncubeData.tex
@@ -375,7 +375,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 
 {C:/Users/mrpar/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17]
-[18] [19] [20] [21] [22] [23] [24] (ncubeData.aux) ) 
+[18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]
+[33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] (ncubeData.aux) ) 
 Here is how much of TeX's memory you used:
  3859 strings out of 479334
  62965 string characters out of 2857083
@@ -384,22 +385,23 @@ Here is how much of TeX's memory you used:
  410017 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,7n,88p,246b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/mrpar/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/mrpar/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users
-/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-<C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-mi8.pfb><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/mrpar/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/mrpar/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/mrpar/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ncubeData.pdf (24 pages, 142680 bytes).
+<C:/Use
+rs/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pf
+b><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi10.pfb><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/mrpar/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/mrpar/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/mrpar/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/mrpar/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/
+mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
+><C:/Users/mrpar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy10.pfb>
+Output written on ncubeData.pdf (43 pages, 152408 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
+ 186 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

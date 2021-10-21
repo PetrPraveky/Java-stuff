@@ -48,6 +48,7 @@ public class FolderCreate {
         for (int i=0; i<dimNumMax; i++) {
             new NcubeOut(i);
         }
+        
         System.out.println("\\end{document}");
     }
 }
