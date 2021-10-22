@@ -1,7 +1,5 @@
 package funcs.filesys.tex;
 
-import java.util.Date;
-
 public class TexFileTemp {
     TexCommands texCommands = new TexCommands();
     public void texFileBeg() {
@@ -20,8 +18,6 @@ public class TexFileTemp {
     public void texFileTitle(String title) {
         System.out.println("\\title{\\Large{\\textbf{"+title+"}}}");
         System.out.println("\\author{By Peter Kučera}");
-        Date currentDate = new Date();
-        System.out.println("\\date{"+currentDate+"}");
         System.out.println("\\maketitle");
         System.out.println("\\newpage");
     }
@@ -42,7 +38,7 @@ public class TexFileTemp {
                 When you complete this square by the same technigue, it is named \"face\". Again, if you align three faces with same vertex and bend it
                 into third dimension, you create a one vertex of cube. Again by completing this cube, you can name in \"cell\". You can continue and name another objects in
                 higher dimensions, but I didn't do that and I only use these four terms. So Vertex mean zero dimensional part of object; Edge is one dimensional part of object of
-                certain lenght; Face is two dimensional part of object, square, made of four same edges; And Cell is third dimensional part of object, cube, made of six same
+                certain length; Face is two dimensional part of object, square, made of four same edges; And Cell is third dimensional part of object, cube, made of six same
                 faces. You can find number of those in higher dimensional cubes later in this document.
             }
 
@@ -50,7 +46,7 @@ public class TexFileTemp {
         System.out.println("\\vspace{-5pt}");
         System.out.println("""
             \\null\\large{
-                \\quad By \"leght a\" or \"side lenght a\" I mean specific lenght of edge. By using volume I mean amount of space inside $n$ dimensional object.
+                \\quad By \"length a\" or \"side length a\" I mean specific length of edge. By using volume I mean amount of space inside $n$ dimensional object.
                 Because here we are talking about cubes, \"Volume\" (or \"Area\" in 2D) is computed by taking one edge and giving it to the power of $n$. I didn't write volume for
                 in 0D and 1D, because it is obvious. \"Surface\" (or \"Perimeter\" that is used in square) is meant the sum of volumes of $n-1$ dimension objects. 
                 I didn't write surface in 0D, because it is obvious. Lastly \"Diagonal\" is line, that connects two vertices agains each other. If we want
@@ -118,7 +114,7 @@ public class TexFileTemp {
         System.out.println("\\vspace{-5pt}");
         System.out.println("""
             \\null\\large{
-                \\quad Equation for volume \"$V_n$\" comes from assumption, that if we put lenght $a$ to the power on $n$, we'll get amount of inner space of $n$ dimensional object.
+                \\quad Equation for volume \"$V_n$\" comes from assumption, that if we put length $a$ to the power on $n$, we'll get amount of inner space of $n$ dimensional object.
                 So the equation looks like this:} \\newline
             \\null\\centerline{
                 \\Large{

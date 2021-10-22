@@ -63,12 +63,12 @@ public class NcubeOut {
             System.out.println("- None");
             System.out.println("\\end{multicols}");
         }
-        if (dimension>1) {
-            System.out.println("\\newpage");
-        } else {
-            texCommands.texMiddleLine(0.2);
-        }
-        System.out.println("\\null\\textbf{Graph for "+dimension+" cube:}");
+        // if (dimension>1) {
+        //     System.out.println("\\newpage");
+        // } else {
+        //     texCommands.texMiddleLine(0.2);
+        // }
+        // System.out.println("\\null\\textbf{Graph for "+dimension+" cube:}");
         System.out.println("\\newpage");
     }
     public void NcubeGraphOut() throws IOException {

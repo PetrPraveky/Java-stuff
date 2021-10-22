@@ -4,6 +4,6 @@ import solids.platonic_solids.ncube.NcubeGraphAlgs;
 public class App {
     public static void main(String[] args) throws Exception {
         // new FolderCreate();
-        new NcubeGraphAlgs(null, 2);
+        new NcubeGraphAlgs(null, 4);
     }
 }
