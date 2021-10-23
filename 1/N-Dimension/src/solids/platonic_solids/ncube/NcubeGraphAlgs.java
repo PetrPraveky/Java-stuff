@@ -73,7 +73,7 @@ public class NcubeGraphAlgs {
     }
     // Create virtual points
     private void WritePoint(int dimension) {
-        int baseX = 200; int baseY = 200;
+        int baseX = 300; int baseY = 300;
         int pastI = 0;
         if (dimension <2) {
             for (int k = 0; k<(dimension+1); k++) {
