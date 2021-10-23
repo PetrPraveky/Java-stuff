@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import javax.imageio.ImageIO;
 import java.awt.Color;
@@ -28,7 +27,6 @@ public class NcubeGraphAlgs {
         System.out.println("\n"+twoDSegment.get(0).get(0));
         System.out.println("\n"+twoDSegment.get(0).get(0).get(0));
         System.out.println("\n"+twoDSegment.get(0).get(0).get(0).get(0));
-        System.out.println(twoDSegment.size());
         PrintPoints(dimension, folder);
     }
     private void PrintPoints(int dimension, String folder) throws IOException {
@@ -39,7 +37,7 @@ public class NcubeGraphAlgs {
         g2d.setColor(Color.white);
         g2d.fillRect(0, 0, width, height);
         g2d.setColor(Color.black);
-        Random rand = new Random();
+        // Random rand = new Random();
         for (int i = 0; i < twoDSegment.size(); i++) {
             // float r = rand.nextFloat();
             // float g = rand.nextFloat();
@@ -60,14 +58,17 @@ public class NcubeGraphAlgs {
                         g2d.drawLine(twoDSegment.get(i*2).get(j).get(0+k).get(0), twoDSegment.get(i*2).get(j).get(0+k).get(1), twoDSegment.get((i*2)+1).get(j).get(0+k).get(0), twoDSegment.get((i*2)+1).get(j).get(0+k).get(1));
                     } catch (Exception e) {}
                 }
-                for (int k = 0; k < (twoDSegment.get(i).get(j)).size(); k++) {
-                    try {
-                        g2d.drawLine(twoDSegment.get(i).get(j).get(0+k).get(0), twoDSegment.get(i).get(j).get(0+k).get(1), twoDSegment.get(i+2).get(j).get(0+k).get(0), twoDSegment.get(i+2).get(j).get(0+k).get(1));
-                    } catch (Exception e) {}
-                }                
+                if (i%4==0 || (i-1)%4==0) {
+                    for (int k = 0; k < (twoDSegment.get(i).get(j)).size(); k++) {
+                        try {
+                            g2d.drawLine(twoDSegment.get(i).get(j).get(0+k).get(0), twoDSegment.get(i).get(j).get(0+k).get(1), twoDSegment.get(i+2).get(j).get(0+k).get(0), twoDSegment.get(i+2).get(j).get(0+k).get(1));
+                        } catch (Exception e) {}
+                    }                
+                }
             }
         }
-        File file = new File(folder+"saadImg"+(dimension-1)+".png");
+        File file = new File(folder+"saadImg.png");
+        // File file = new File(folder+"saadImg"+(dimension)+".png");
         ImageIO.write(outImg, "png", file);     
     }
     // Create virtual points
@@ -87,8 +88,11 @@ public class NcubeGraphAlgs {
             }
         } else {
             for (int i = 0; i<(mathFuncs.power(2, (dimension-2))); i++) {
-                System.out.println(pastI);
-                if (pastI%2 == 0 && pastI != 0) {
+                if (pastI%4 == 0 && pastI != 0) {
+                    baseX = baseX-150;
+                    baseY = baseY+100;
+                }
+                else if (pastI%2 == 0 && pastI != 0 &&pastI%4 !=0) {
                     baseX = baseX+60;
                     baseY = baseY+60;                    
                 }
