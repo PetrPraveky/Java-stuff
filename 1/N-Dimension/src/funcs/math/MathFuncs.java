@@ -12,11 +12,15 @@ public class MathFuncs {
         }
     }
     public long power(long base, long exp) {
-        long ansPower = base;
-        for (long i = 1; i < exp; i++) {
-            ansPower = ansPower*base;
+        if (exp == 0) {
+            return 1;
+        } else {
+            long ansPower = base;
+            for (long i = 1; i < exp; i++) {
+                ansPower = ansPower*base;
+            }
+            return ansPower;
         }
-        return ansPower;
     }
     public String bigFactorial(String number) {
         if (number.equals("0")) {
