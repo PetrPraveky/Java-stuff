@@ -25,14 +25,6 @@ public class NcubeGraphAlgs {
     public NcubeGraphAlgs(String folder, int dimension) throws IOException {
         // WritePoints(dimension);
         WritePoint(dimension);
-        System.out.println(minX+" | "+maxX);
-        System.out.println(minY+" | "+maxY);
-        System.out.println("\n"+twoDSegment);
-        System.out.println("\n"+twoDSegment.size());
-        System.out.println("\n"+twoDSegment.get(0));
-        System.out.println("\n"+twoDSegment.get(0).get(0));
-        System.out.println("\n"+twoDSegment.get(0).get(0).get(0));
-        System.out.println("\n"+twoDSegment.get(0).get(0).get(0).get(0));
         PrintPoints(dimension, folder);
     }
     private void PrintPoints(int dimension, String folder) throws IOException {
@@ -191,8 +183,8 @@ public class NcubeGraphAlgs {
                 g2d.setColor(Color.black);
             }
         }
-        File file = new File(folder+"saadImg.png");
-        // File file = new File(folder+"saadImg"+(dimension)+".png");
+        // File file = new File(folder+"saadImg.png");
+        File file = new File(folder+(dimension)+"DcubeImg.png");
         ImageIO.write(outImg, "png", file);     
     }
     // Create virtual points
