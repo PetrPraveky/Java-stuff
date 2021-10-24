@@ -18,10 +18,14 @@ public class NcubeGraphAlgs {
     List<List<Integer>> zeroDSegment = new ArrayList<>();
     List<Integer> pointAxis = new ArrayList<Integer>();
     int sideLenght = 50;
+    int minX = 10000; int maxX = 0;
+    int minY = 10000; int maxY = 0;
     
     public NcubeGraphAlgs(String folder, int dimension) throws IOException {
         // WritePoints(dimension);
         WritePoint(dimension);
+        System.out.println(minX+" | "+maxX);
+        System.out.println(minY+" | "+maxY);
         System.out.println("\n"+twoDSegment);
         System.out.println("\n"+twoDSegment.size());
         System.out.println("\n"+twoDSegment.get(0));
@@ -31,19 +35,21 @@ public class NcubeGraphAlgs {
         PrintPoints(dimension, folder);
     }
     private void PrintPoints(int dimension, String folder) throws IOException {
-        int width = 1000;
-        int height = 1000;
+        int width = 10000;
+        int height = 10000;
         BufferedImage outImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d = outImg.createGraphics();
         g2d.setColor(Color.white);
         g2d.fillRect(0, 0, width, height);
         g2d.setColor(Color.black);
         // Random rand = new Random();
-        int x = 0;
+        int x1 = 0; int x2 = 0;
         for (int i = 0; i < twoDSegment.size(); i++) {
             if (i%8==0 && i!=0) {
-                x++;
-                System.out.println(x);
+                x1++;
+            }
+            if (i%16==0 && i!=0) {
+                x2++;
             }
             for (int j = 0; j < (twoDSegment.get(i)).size(); j++) {
                 // 1D
@@ -63,6 +69,7 @@ public class NcubeGraphAlgs {
                     } catch (Exception e) {}
                 }
                 // 4D
+                // g2d.setColor(Color.red);
                 if (i%4==0 || (i-1)%4==0) {
                     for (int k = 0; k < (twoDSegment.get(i).get(j)).size(); k++) {
                         try {
@@ -71,15 +78,30 @@ public class NcubeGraphAlgs {
                     }                
                 }
                 // 5D
-                g2d.setColor(Color.red);
-                if (i >= 0+(8*x) && i < 4+(8*x)) {
+                // g2d.setColor(Color.GREEN);
+                if (i >= 0+(8*x1) && i < 4+(8*x1)) {
                     for (int k = 0; k < (twoDSegment.get(i).get(j)).size(); k++) {
                         try {
                             g2d.drawLine(twoDSegment.get(i).get(j).get(0+k).get(0), twoDSegment.get(i).get(j).get(0+k).get(1), twoDSegment.get(i+4).get(j).get(0+k).get(0), twoDSegment.get(i+4).get(j).get(0+k).get(1));
                         } catch (Exception e) {}
                     }                
                 }
-                g2d.setColor(Color.black);
+                // 6D 
+                // g2d.setColor(Color.blue);
+                if (i >= 0+(16*x2) && i < 8+(16*x2)) {
+                    for (int k = 0; k < (twoDSegment.get(i).get(j)).size(); k++) {
+                        try {
+                            g2d.drawLine(twoDSegment.get(i).get(j).get(0+k).get(0), twoDSegment.get(i).get(j).get(0+k).get(1), twoDSegment.get(i+8).get(j).get(0+k).get(0), twoDSegment.get(i+8).get(j).get(0+k).get(1));
+                        } catch (Exception e) {}
+                    }                
+                }
+                // g2d.setColor(Color.pink);
+                for (int k = 0; k < (twoDSegment.get(i).get(j)).size(); k++) {
+                    try {
+                        g2d.drawLine(twoDSegment.get(i).get(j).get(0+k).get(0), twoDSegment.get(i).get(j).get(0+k).get(1), twoDSegment.get(i+16).get(j).get(0+k).get(0), twoDSegment.get(i+16).get(j).get(0+k).get(1));
+                    } catch (Exception e) {}
+                }  
+                // g2d.setColor(Color.black);
             }
         }
         File file = new File(folder+"saadImg.png");
@@ -88,7 +110,7 @@ public class NcubeGraphAlgs {
     }
     // Create virtual points
     private void WritePoint(int dimension) {
-        int baseX = 300; int baseY = 300;
+        int baseX = 300; int baseY = 100;
         int pastI = 0;
         if (dimension <2) {
             for (int k = 0; k<(dimension+1); k++) {
@@ -134,8 +156,20 @@ public class NcubeGraphAlgs {
     private void Point2DPart(int baseX, int baseY) {
         for (int i = 0; i<2; i++) {
             baseY = baseY+i*sideLenght;
+            if (baseY+i*sideLenght>maxY) {
+                maxY = baseY+i*sideLenght;
+            }
+            if (baseY+i*sideLenght<minY) {
+                minY = baseY+i*sideLenght;
+            }
             for (int j = 0; j<2; j++) {
                 pointAxis.add(baseX+j*sideLenght);
+                if (baseX+j*sideLenght>maxX) {
+                    maxX = baseX+j*sideLenght;
+                }
+                if (baseX+j*sideLenght<minX) {
+                    minX = baseX+j*sideLenght;
+                }
                 pointAxis.add(baseY);
                 zeroDSegment.add(new ArrayList<Integer>(pointAxis));
                 pointAxis.clear();
