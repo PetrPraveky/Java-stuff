@@ -4,7 +4,7 @@ import solids.platonic_solids.ncube.NcubeGraphAlgs;
 public class App {
     public static void main(String[] args) throws Exception {
         // new FolderCreate();
-        new NcubeGraphAlgs(null, 5);
+        new NcubeGraphAlgs(null, 7);
         // for (int i = 2; i<6; i++) {
         //     new NcubeGraphAlgs(".output/platonic_solids/ncube/", i);
         // }
