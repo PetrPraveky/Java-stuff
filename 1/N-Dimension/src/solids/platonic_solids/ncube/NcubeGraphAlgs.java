@@ -37,58 +37,62 @@ public class NcubeGraphAlgs {
         g2d.fillRect(0, 0, width, height);
         g2d.setColor(Color.black);
         // Random rand = new Random();
-        // int x1 = 0; int x2 = 0; int x3 = 0; int x4 = 0; int x5 = 0; int x6 = 0; int x7 = 0; int x8 = 0;
-        // int x9 = 0; int x10 = 0; int x11 = 0; int x12 = 0; int x13 = 0; int x14 = 0; int x15 = 0; int x16 = 0;    
+        List<Integer> x = new ArrayList<>();
+        int x1 = 0; int x2 = 0; int x3 = 0; int x4 = 0; int x5 = 0; int x6 = 0; int x7 = 0; int x8 = 0;
+        int x9 = 0; int x10 = 0; int x11 = 0; int x12 = 0; int x13 = 0; int x14 = 0; int x15 = 0; int x16 = 0;    
         if (dimension>1) {
             for (int i = 0; i < twoDSegment.size(); i++) {
-                // if (i%8==0 && i!=0) {
-                //     x1++;
-                // }
-                // if (i%16==0 && i!=0) {
-                //     x2++;
-                // }
-                // if (i%32==0 && i!=0) {
-                //     x3++;
-                // }
-                // if (i%64==0 && i!=0) {
-                //     x4++;
-                // }
-                // if (i%128==0 && i!=0) {
-                //     x5++;
-                // }
-                // if (i%256==0 && i!=0) {
-                //     x6++;
-                // }
-                // if (i%512==0 && i!=0) {
-                //     x7++;
-                // }
-                // if (i%1024==0 && i!=0) {
-                //     x8++;
-                // }
-                // if (i%2048==0 && i!=0) {
-                //     x9++;
-                // }
-                // if (i%4096==0 && i!=0) {
-                //     x10++;
-                // }
-                // if (i%8192==0 && i!=0) {
-                //     x11++;
-                // }
-                // if (i%16384==0 && i!=0) {
-                //     x12++;
-                // }
-                // if (i%32768==0 && i!=0) {
-                //     x13++;
-                // }
-                // if (i%65536==0 && i!=0) {
-                //     x14++;
-                // }
-                // if (i%131072==0 && i!=0) {
-                //     x15++;
-                // }
-                // if (i%262144==0 && i!=0) {
-                //     x16++;
-                // }
+                x.clear();
+                if (i%8==0 && i!=0) {
+                    x1++;
+                }
+                if (i%16==0 && i!=0) {
+                    x2++;
+                }
+                if (i%32==0 && i!=0) {
+                    x3++;
+                }
+                if (i%64==0 && i!=0) {
+                    x4++;
+                }
+                if (i%128==0 && i!=0) {
+                    x5++;
+                }
+                if (i%256==0 && i!=0) {
+                    x6++;
+                }
+                if (i%512==0 && i!=0) {
+                    x7++;
+                }
+                if (i%1024==0 && i!=0) {
+                    x8++;
+                }
+                if (i%2048==0 && i!=0) {
+                    x9++;
+                }
+                if (i%4096==0 && i!=0) {
+                    x10++;
+                }
+                if (i%8192==0 && i!=0) {
+                    x11++;
+                }
+                if (i%16384==0 && i!=0) {
+                    x12++;
+                }
+                if (i%32768==0 && i!=0) {
+                    x13++;
+                }
+                if (i%65536==0 && i!=0) {
+                    x14++;
+                }
+                if (i%131072==0 && i!=0) {
+                    x15++;
+                }
+                if (i%262144==0 && i!=0) {
+                    x16++;
+                }
+                x.add(x1); x.add(x2); x.add(x3); x.add(x4); x.add(x5); x.add(x6); x.add(x7); x.add(x8);
+                x.add(x9); x.add(x10); x.add(x11); x.add(x12); x.add(x13); x.add(x14); x.add(x15); x.add(x16);
                 for (int j = 0; j < (twoDSegment.get(i)).size(); j++) {
                     // 1D
                     for (int k = 0; k < (twoDSegment.get(i).get(j)).size(); k++) {
@@ -138,24 +142,18 @@ public class NcubeGraphAlgs {
                     for (int l = 2; l<(dimension-1); l++) {
                         int coef1 = (int)mathFuncs.power(2, (l+1)); // dim 5 == 8
                         int coef2 = (int)mathFuncs.power(2, (l)); // dim 5 == 4
-                        int x1 = 0;
-                        for (int m = 0; m < twoDSegment.size(); m++) {
-                            if (m%coef1==0 && m!=0) {
-                                x1++;
-                            }
-                            if (m >= 0+(coef1*x1) && m < coef2+(coef1*x1)) {
-                                for (int k = 0; k < (twoDSegment.get(m).get(j)).size(); k++) {
-                                    try {
-                                        g2d.drawLine(
-                                            twoDSegment.get(m).get(j).get(0+k).get(0)-sizeCoefX, 
-                                            twoDSegment.get(m).get(j).get(0+k).get(1)-sizeCoefY, 
-                                            twoDSegment.get(m+coef2).get(j).get(0+k).get(0)-sizeCoefX, 
-                                            twoDSegment.get(m+coef2).get(j).get(0+k).get(1)-sizeCoefY
-                                            );
-                                    } catch (Exception e) {}
-                                }                
-                            }                        
-                        }
+                        if (i >= 0+(coef1*(x.get(l-2))) && i < coef2+(coef1*(x.get(l-2)))) {
+                            for (int k = 0; k < (twoDSegment.get(i).get(j)).size(); k++) {
+                                try {
+                                    g2d.drawLine(
+                                        twoDSegment.get(i).get(j).get(0+k).get(0)-sizeCoefX, 
+                                        twoDSegment.get(i).get(j).get(0+k).get(1)-sizeCoefY, 
+                                        twoDSegment.get(i+coef2).get(j).get(0+k).get(0)-sizeCoefX, 
+                                        twoDSegment.get(i+coef2).get(j).get(0+k).get(1)-sizeCoefY
+                                        );
+                                } catch (Exception e) {}
+                            }                
+                        }                        
                     }
                     g2d.setColor(Color.red);
                     g2d.setColor(Color.black);
@@ -206,10 +204,40 @@ public class NcubeGraphAlgs {
             }
         } else {
             for (int i = 0; i<(mathFuncs.power(2, (dimension-2))); i++) {
+                //19D
+                if (pastI%65536 == 0 && pastI != 0) {
+                    baseX = baseX+-30000;
+                    baseY = baseY-5000;   
+                }
+                //18D
+                else if (pastI%32768 == 0 && pastI != 0) {
+                    baseX = baseX+7000;
+                    baseY = baseY-25000;   
+                }
+                //17D
+                else if (pastI%16384 == 0 && pastI != 0) {
+                    baseX = baseX-20000;
+                    baseY = baseY-2500;   
+                }
+                //16D
+                else if (pastI%8192 == 0 && pastI != 0) {
+                    baseX = baseX+3500;
+                    baseY = baseY-12000;   
+                }
+                //15D
+                else if (pastI%4096 == 0 && pastI != 0) {
+                    baseX = baseX-9000;
+                    baseY = baseY-500;   
+                }
+                //14D
+                else if (pastI%2048 == 0 && pastI != 0) {
+                    baseX = baseX+250;
+                    baseY = baseY-4500;   
+                }
                 //13D
-                if (pastI%1024 == 0 && pastI != 0) {
-                    baseX = baseX-3000;
-                    baseY = baseY+300;   
+                else if (pastI%1024 == 0 && pastI != 0) {
+                    baseX = baseX-2500;
+                    baseY = baseY+100;   
                 }
                 //12D
                 else if (pastI%512 == 0 && pastI != 0) {
@@ -218,7 +246,7 @@ public class NcubeGraphAlgs {
                 }
                 //11D
                 else if (pastI%256 == 0 && pastI != 0) {
-                    baseX = baseX-1600;
+                    baseX = baseX-1500;
                     baseY = baseY+100;   
                 }
                 //10D
