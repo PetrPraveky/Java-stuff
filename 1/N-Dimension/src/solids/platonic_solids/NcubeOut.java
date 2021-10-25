@@ -60,14 +60,14 @@ public class NcubeOut {
             System.out.println("\\end{multicols}");
         }
         new NcubeGraphAlgs(folder, dimension);
-        if (dimension != 0 && dimension < 12) {
+        if (dimension != 0 && dimension < 16) {
             if (dimension>4) {
                 System.out.println("\\newpage");
 
             } else {
                 texCommands.texMiddleLine(0.2);
             }
-            System.out.println("\\null\\textbf{Graph for "+dimension+" cube:}\\newline");
+            System.out.println("\\null\\textbf{Visualization for "+dimension+" cube:}\\newline");
             System.out.println("\\begin{flushleft}");
             if (dimension > 6) {
                 System.out.println("\\includegraphics[width=\\textwidth]{"+dimension+"DcubeImg}");

@@ -156,6 +156,31 @@ public class TexFileTemp {
                 }
             }
         """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+            \\null\\large{
+                \\quad Wich can be simplyfied:} \\newline
+            \\null\\centerline{
+                \\Large{
+                    $D_n = a\\times{\\sqrt{n}}$
+                }
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+            \\null\\large{
+                \\quad Lastly I want to talk about visualization of those cubes. I only have visual representation of up to 15 dimensional cubes in 2D.
+                I'm not capable to create all 20, well not now. Visualization of 0D cube also missing, because it is single point in space and I think it is
+                useless to create that.
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+            \\null\\large{
+                \\quad Those visualizations are created by simple, but complex program, that creates all vertices at first and then it connects them togeter in
+                certain way, to create this representation of $n$ dimenion on 2D space.
+            }
+        """);
         System.out.println("\\end{flushleft}");
         System.out.println("\\newpage");
     }
