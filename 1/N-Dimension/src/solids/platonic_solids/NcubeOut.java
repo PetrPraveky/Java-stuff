@@ -1,17 +1,13 @@
 package solids.platonic_solids;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
-import javax.imageio.ImageIO;
-import java.awt.Color;
-import java.awt.Graphics2D;
 
 import funcs.filesys.tex.TexCommands;
 import solids.platonic_solids.ncube.NcubeAlgs;
+import solids.platonic_solids.ncube.NcubeGraphAlgs;
 // Class for hypercubes in n-dimensions
 public class NcubeOut {
-    public NcubeOut(int dimension) throws IOException {
+    public NcubeOut(int dimension, String folder) throws IOException {
         NcubeAlgs nCubeAlgs = new NcubeAlgs();
         TexCommands texCommands = new TexCommands();
         BigInteger vertNum = new BigInteger(nCubeAlgs.vertices(Integer.toString(dimension)));
@@ -63,27 +59,23 @@ public class NcubeOut {
             System.out.println("- None");
             System.out.println("\\end{multicols}");
         }
-        // if (dimension>1) {
-        //     System.out.println("\\newpage");
-        // } else {
-        //     texCommands.texMiddleLine(0.2);
-        // }
-        // System.out.println("\\null\\textbf{Graph for "+dimension+" cube:}");
+        new NcubeGraphAlgs(folder, dimension);
+        if (dimension != 0 && dimension < 12) {
+            if (dimension>4) {
+                System.out.println("\\newpage");
+
+            } else {
+                texCommands.texMiddleLine(0.2);
+            }
+            System.out.println("\\null\\textbf{Graph for "+dimension+" cube:}\\newline");
+            System.out.println("\\begin{flushleft}");
+            if (dimension > 6) {
+                System.out.println("\\includegraphics[width=\\textwidth]{"+dimension+"DcubeImg}");
+            } else {
+                System.out.println("\\includegraphics{"+dimension+"DcubeImg}");
+            }
+            System.out.println("\\end{flushleft}");
+        }
         System.out.println("\\newpage");
-    }
-    public void NcubeGraphOut() throws IOException {
-        int width = 300;
-        int height = 300;
-        BufferedImage buffImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        Graphics2D g2d = buffImg.createGraphics();
-        g2d.setColor(Color.white);
-        g2d.fillRect(0,0,width,height);
-        g2d.setColor(Color.black);
-        g2d.fillOval(0,0,width,height);
-        g2d.setColor(Color.ORANGE);
-        g2d.drawString("Saad Yoursuf", 55, 125);
-        g2d.dispose();
-        File file = new File("saadImg.png");
-        ImageIO.write(buffImg, "png", file);
     }
 }

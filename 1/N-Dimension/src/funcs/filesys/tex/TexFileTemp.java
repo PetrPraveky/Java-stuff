@@ -13,6 +13,8 @@ public class TexFileTemp {
         System.out.println("\\usepackage{blindtext}\n");
         System.out.println("\\usepackage{xfrac}");
 
+        System.out.println("\\graphicspath{{./ncubeImg/}}");
+
         System.out.println("\\begin{document}");
     }
     public void texFileTitle(String title) {

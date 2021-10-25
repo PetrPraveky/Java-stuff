@@ -39,6 +39,10 @@ public class FolderCreate {
         } else {}
         PrintStream out = new PrintStream(new FileOutputStream(ncubeFile), false);
         System.setOut(out);
+        File ncubeImg = new File(hypercubeDir+"/ncubeImg");
+        if (!ncubeImg.exists()) {
+            ncubeImg.mkdirs();
+        }
         // .tex file creation
         // Title page
         texFileTemp.texFileBeg();
@@ -46,7 +50,7 @@ public class FolderCreate {
         // Info Page / Pages
         texFileTemp.texFileInfoPageNcube();
         for (int i=0; i<dimNumMax; i++) {
-            new NcubeOut(i);
+            new NcubeOut(i, String.valueOf(ncubeImg));
         }
         System.out.println("\\end{document}");
     }
