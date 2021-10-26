@@ -184,4 +184,11 @@ public class TexFileTemp {
         System.out.println("\\end{flushleft}");
         System.out.println("\\newpage");
     }
+    public void texFileInfoPageNsphere() {
+        System.out.println("\\centerline{\\Large{\\textbf{N-Dimensional Sphere Terminology and Formulas}}}");
+        texCommands.texMiddleLine(1);
+        System.out.println("\\begin{flushleft}");
+        System.out.println("\\end{flushleft}");
+        System.out.println("\\newpage");
+    }
 }

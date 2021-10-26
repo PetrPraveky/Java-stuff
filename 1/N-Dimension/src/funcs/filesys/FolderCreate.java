@@ -20,12 +20,20 @@ public class FolderCreate {
         platonicSolidsOutputs();
     }
     private void platonicSolidsOutputs() throws Exception {
-        // N-D rectangle directory
+        // Platonic solids direcotry
         File platDir = new File(mainDir+"/platonic_solids");
         if (!platDir.exists()) {
             platDir.mkdirs();
         } else {}
         ncubeOutput(platDir);
+    }
+    private void ellipsoidsOutput() throws Exception {
+        // Ellipsoids directory
+        File ellDir = new File(mainDir+"/ellipsoids");
+        if (!ellDir.exists()) {
+            ellDir.mkdirs();
+        } else {}
+        nsphereOutput(ellDir);
     }
     private void ncubeOutput(File file) throws Exception {
         // Ncube data file & folder
@@ -44,14 +52,33 @@ public class FolderCreate {
             ncubeImg.mkdirs();
         }
         // .tex file creation
-        // Title page
         texFileTemp.texFileBeg();
+        // Title page
         texFileTemp.texFileTitle("N-Dimensional Cubes");
         // Info Page / Pages
         texFileTemp.texFileInfoPageNcube();
+        // Data pages
         for (int i=0; i<dimNumMax; i++) {
             new NcubeOut(i, String.valueOf(ncubeImg));
         }
         System.out.println("\\end{document}");
+    }
+    private void nsphereOutput(File file) throws Exception {
+        // Nsphere data file & folder
+        File nshepreDir = new File(file+"/nspehre");
+        if (!nshepreDir.exists()) {
+            nshepreDir.mkdirs();
+        } else {}
+        File nsphereOut = new File(nshepreDir+"/nspehreData.tex");
+        if (!nsphereOut.exists()) {
+            nsphereOut.createNewFile();
+        }
+        PrintStream out = new PrintStream(new FileOutputStream(nsphereOut), false);
+        System.setOut(out);
+        // .tex file creation
+        texFileTemp.texFileBeg();
+        // Title page
+        texFileTemp.texFileTitle("N-Dimensional Spheres");
+        // Info Page / Pages
     }
 }
