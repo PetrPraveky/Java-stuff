@@ -6,7 +6,7 @@ public class App {
         try {
             ProcessBuilder builder = new ProcessBuilder(
                 "python",
-                System.getProperty("user.dir") + "\\lib\\python\\main.py", "1", "4"
+                System.getProperty("user.dir") + "\\lib\\python\\main.py"
             );
             System.out.println(System.getProperty("user.dir") + "\\lib\\python\\main.py");
             Process process = builder.start();
