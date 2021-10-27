@@ -18,6 +18,7 @@ public class FolderCreate {
             mainDir.mkdirs();
         } else {}
         platonicSolidsOutputs();
+        ellipsoidsOutput();
     }
     private void platonicSolidsOutputs() throws Exception {
         // Platonic solids direcotry
@@ -69,7 +70,7 @@ public class FolderCreate {
         if (!nshepreDir.exists()) {
             nshepreDir.mkdirs();
         } else {}
-        File nsphereOut = new File(nshepreDir+"/nspehreData.tex");
+        File nsphereOut = new File(nshepreDir+"/nsphereData.tex");
         if (!nsphereOut.exists()) {
             nsphereOut.createNewFile();
         }
@@ -80,5 +81,6 @@ public class FolderCreate {
         // Title page
         texFileTemp.texFileTitle("N-Dimensional Spheres");
         // Info Page / Pages
+        System.out.println("\\end{document}");
     }
 }
