@@ -19,18 +19,18 @@ workingdirectory=os.getcwd()
 def main():
     # x = sympy.Symbol('x')
     # print(sympy.solve(sympy.Eq(x, 3), x))
-    n = 5
+    n = int(sys.argv[1])
     V = Symbol('V')
     R = 1
-    r = Symbol("r")
+    r = Symbol('r')
     nCubeEquation = Eq(V, (pi**(n/2)/gamma((n/2)+1))*R**n)
-    print_latex(solve(nCubeEquation))
-    print_latex(gammasimp(nCubeEquation))
-    print_latex(nsimplify(nCubeEquation))
+    # print_latex(solve(nCubeEquation))
+    # print_latex(gammasimp(nCubeEquation))
+    # print_latex(nsimplify(nCubeEquation))
     nCubeAns = solve(nCubeEquation)[0]
-    print(nCubeAns)
-    print("")
-    print_latex(nsimplify(nCubeAns/pi**2))
+    # print(nCubeAns)
+    # print("")
+    print_latex((nsimplify(nCubeAns/pi**1))*(nsimplify(pi**1))*(nsimplify(r**n)))
     
 if __name__ == "__main__":
     main()
