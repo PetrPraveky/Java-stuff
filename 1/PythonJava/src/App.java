@@ -4,10 +4,11 @@ import java.io.InputStreamReader;
 public class App {
     public static void main(String[] args) throws Exception {
         int dimension = 3;
+        int coef = 1;
         try {
             ProcessBuilder builder = new ProcessBuilder(
                 "python",
-                System.getProperty("user.dir") + "\\lib\\python\\main.py", String.valueOf(dimension)
+                System.getProperty("user.dir") + "\\lib\\python\\main.py", String.valueOf(dimension), String.valueOf(coef)
             );
             System.out.println(System.getProperty("user.dir") + "\\lib\\python\\main.py");
             Process process = builder.start();
