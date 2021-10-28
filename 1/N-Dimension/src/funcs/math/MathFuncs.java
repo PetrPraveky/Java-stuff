@@ -41,4 +41,7 @@ public class MathFuncs {
         }
         return String.valueOf(bigAnsPower);
     }
+    public long integralFunc(long a, long b, long f) {
+        
+    }
 }
