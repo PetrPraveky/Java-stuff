@@ -1,12 +1,8 @@
 package funcs.math;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 
 //My Mathematical supporting functions
 public class MathFuncs {
-    List<Integer> a = new ArrayList<>();
-
     public long factorial(long number) {
         if (number == 0) {
             return 1;
@@ -44,21 +40,5 @@ public class MathFuncs {
             bigAnsPower = bigAnsPower.multiply(bigBase);
         }
         return String.valueOf(bigAnsPower);
-    }
-    public long ellipseIntegralFunc(List<Integer> semiax, int i, int dimMax, boolean starter) {
-        long ellipseIntegralFuncAns = 0;
-        if (i != dimMax) {
-            if (starter==true) {
-                a = semiax;
-                System.out.println(a);
-                ellipseIntegralFunc(a, i, dimMax, false);
-            } else {
-                ellipseIntegralFuncAns = a.get((i-1));
-            }
-        }
-        
-
-
-        return ellipseIntegralFuncAns;
     }
 }
