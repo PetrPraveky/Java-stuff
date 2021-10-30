@@ -17,7 +17,7 @@
             "request": "launch",
             "mainClass": "App",
             "projectName": "N-Dimension_19f7e0c4",
-            "vmArgs": "-Xmx8192m"
+            "vmArgs": ["-Xmx8192m", "-Xss4M"]
         }
     ]
 }

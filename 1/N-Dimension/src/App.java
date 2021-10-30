@@ -5,7 +5,7 @@ import funcs.math.MathFuncs;
 // Program for computing stuff for higher dimensions
 public class App {
     public static void main(String[] args) throws Exception {
-        new NellipsoidOut(5);
+        new NellipsoidOut(3);
         // new FolderCreate();
         // new NcubeGraphAlgs(".", 19);
         // for (int i = 2; i<11; i++) {
