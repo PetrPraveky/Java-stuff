@@ -132,7 +132,7 @@ public class TexFileTemp {
                 what it means we already established with $m = n-1$:} \\newline
             \\null\\centerline{
                 \\Large{
-                    $S_n = X\\times{a^{n-1}}$
+                    $A_n = X\\times{a^{n-1}}\\quad ; \\quad A_n = 2^{n-m}\\times(\\frac{n!}{m!(n-m)!})\\times{a^{n-1}}$
                 }
             }
         """);
@@ -142,7 +142,7 @@ public class TexFileTemp {
                 \\quad And we can simplify it like this:} \\newline
             \\null\\centerline{
                 \\Large{
-                    $S_n = 2\\times{(\\frac{n!}{(n-1)!})}\\times{a^{n-1}}$
+                    $A_n = 2\\times{(\\frac{n!}{(n-1)!})}\\times{a^{n-1}}$
                 }
             }
         """);
