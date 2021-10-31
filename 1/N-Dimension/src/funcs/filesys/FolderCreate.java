@@ -17,8 +17,8 @@ public class FolderCreate {
         if (!mainDir.exists()) {
             mainDir.mkdirs();
         } else {}
-        // platonicSolidsOutputs();
-        ellipsoidsOutput();
+        platonicSolidsOutputs();
+        // ellipsoidsOutput();
     }
     private void platonicSolidsOutputs() throws Exception {
         // Platonic solids direcotry
