@@ -1,7 +1,9 @@
 package funcs.filesys.tex;
 
+import funcs.filesys.tex.nd.*;
+
 public class TexFileTemp {
-    TexCommands texCommands = new TexCommands();
+    TexCommandsNcube texCommands = new TexCommandsNcube();
     public void texFileBeg() {
         System.out.println("\\documentclass[a4paper,10pt]{article}\n");
         System.out.println("\\renewcommand{\\familydefault}{\\sfdefault}\n");

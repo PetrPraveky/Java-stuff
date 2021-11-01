@@ -1,15 +1,16 @@
 package solids.platonic_solids;
+
 import java.io.IOException;
 import java.math.BigInteger;
 
-import funcs.filesys.tex.TexCommands;
+import funcs.filesys.tex.nd.TexCommandsNcube;
 import solids.platonic_solids.ncube.NcubeAlgs;
 import solids.platonic_solids.ncube.NcubeGraphAlgs;
 // Class for hypercubes in n-dimensions
 public class NcubeOut {
     public NcubeOut(int dimension, String folder) throws IOException {
         NcubeAlgs nCubeAlgs = new NcubeAlgs();
-        TexCommands texCommands = new TexCommands();
+        TexCommandsNcube texCommands = new TexCommandsNcube();
         BigInteger vertNum = new BigInteger(nCubeAlgs.vertices(Integer.toString(dimension)));
         BigInteger edgNum = new BigInteger(nCubeAlgs.edges(Integer.toString(dimension)));
         BigInteger faceNum = new BigInteger(nCubeAlgs.faces(Integer.toString(dimension)));

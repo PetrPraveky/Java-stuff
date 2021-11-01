@@ -41,4 +41,9 @@ public class MathFuncs {
         }
         return String.valueOf(bigAnsPower);
     }
+    public double gammaFunction(long number) {
+        long gammaFunctionAns = 0;
+        double inf = Double.MAX_VALUE;
+        return gammaFunctionAns;
+    }
 }

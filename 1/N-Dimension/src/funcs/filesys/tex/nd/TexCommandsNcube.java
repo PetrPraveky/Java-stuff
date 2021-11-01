@@ -1,4 +1,4 @@
-package funcs.filesys.tex;
+package funcs.filesys.tex.nd;
 
 import java.math.BigInteger;
 
@@ -6,7 +6,7 @@ import funcs.math.MathFuncs;
 import java.lang.Math;
 import solids.platonic_solids.ncube.NcubeAlgs;
 
-public class TexCommands {
+public class TexCommandsNcube {
     MathFuncs math = new MathFuncs();
     public void texTitleOneNCubeCommand(int dimension) {
         String name = "";
