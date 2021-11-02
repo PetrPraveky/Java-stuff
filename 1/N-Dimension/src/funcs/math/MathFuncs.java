@@ -45,15 +45,24 @@ public class MathFuncs {
     public BigDecimal gammaFunction(String number) {
         BigDecimal gammaFunctionAns = new BigDecimal("0");
         BigDecimal inf = new BigDecimal((String.valueOf(Long.MAX_VALUE)));
-        inf = inf.multiply(inf);
+        inf = inf.multiply(inf.multiply(inf.multiply(inf)));
+        inf = inf.multiply(inf.multiply(inf.multiply(inf))).add(new BigDecimal(1));
         BigDecimal zero = new BigDecimal("0");
-        BigDecimal n = new BigDecimal("65536");
+        BigDecimal n = new BigDecimal(String.valueOf(power(2, 16)));
+        System.out.println("N: "+String.valueOf(n));
         System.out.println("Inf: "+String.valueOf(inf));
-        // gammaFunctionAns = (inf.divide(n)).multiply(());
+        gammaFunctionAns = (inf.divide(n)).multiply(new BigDecimal("0"));
         return gammaFunctionAns;
     }
     private BigDecimal gammaFunctionSum(String number, String n) {
         BigDecimal gammaFunctionSumAns = new BigDecimal("0");
+        try {
+            for (int i = 0; i<Integer.valueOf(n); i++) {
+
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         return gammaFunctionSumAns;
     }
     private BigDecimal gammaFunctionInnerFunc(String x, String z) {
