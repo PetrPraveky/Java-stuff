@@ -1,7 +1,7 @@
 package funcs.math;
-import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.lang.Math;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 //My Mathematical supporting functions
 public class MathFuncs {
@@ -46,5 +46,9 @@ public class MathFuncs {
             bigAnsPower = bigAnsPower.multiply(bigBase);
         }
         return String.valueOf(bigAnsPower);
+    }
+    public double gammaFunc(double n) {
+        double ans = 0;
+        return ans;
     }
 }
