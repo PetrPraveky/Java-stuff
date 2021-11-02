@@ -1,7 +1,6 @@
 package funcs.math;
 import java.math.BigInteger;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import org.python.core.PyInstance;
 
 //My Mathematical supporting functions
 public class MathFuncs {
