@@ -17,8 +17,8 @@ workingdirectory=os.getcwd()
     
 # addition()
 def main():
-    print(cos(pi))
-    print(sin(pi/9))
+    # print(cos(pi))
+    # print(sin(pi/9))
     # # x = sympy.Symbol('x')
     # # print(sympy.solve(sympy.Eq(x, 3), x))
     # n = int(sys.argv[1])
@@ -34,7 +34,7 @@ def main():
     # # print(nCubeAns)
     # # print("")
     # print_latex((nsimplify(nCubeAns/pi**coef))*(nsimplify(pi**coef))*(nsimplify(r**n)))
-    
+    print(gamma(2))
     # print("\n\n")
     # x1 = Symbol('x_1')
     # x2 = Symbol('x_2')

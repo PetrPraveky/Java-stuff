@@ -1,9 +1,14 @@
 package funcs.math;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.lang.Math;
 
 //My Mathematical supporting functions
 public class MathFuncs {
+    // Constants
+    public double e = 2.71828182845904523536028747135266249775724709369995;
+    public long inf = Long.MAX_VALUE;
+
     public long factorial(long number) {
         if (number == 0) {
             return 1;
@@ -41,32 +46,5 @@ public class MathFuncs {
             bigAnsPower = bigAnsPower.multiply(bigBase);
         }
         return String.valueOf(bigAnsPower);
-    }
-    public BigDecimal gammaFunction(String number) {
-        BigDecimal gammaFunctionAns = new BigDecimal("0");
-        BigDecimal inf = new BigDecimal((String.valueOf(Long.MAX_VALUE)));
-        inf = inf.multiply(inf.multiply(inf.multiply(inf)));
-        inf = inf.multiply(inf.multiply(inf.multiply(inf))).add(new BigDecimal(1));
-        BigDecimal zero = new BigDecimal("0");
-        BigDecimal n = new BigDecimal(String.valueOf(power(2, 16)));
-        System.out.println("N: "+String.valueOf(n));
-        System.out.println("Inf: "+String.valueOf(inf));
-        gammaFunctionAns = (inf.divide(n)).multiply(new BigDecimal("0"));
-        return gammaFunctionAns;
-    }
-    private BigDecimal gammaFunctionSum(String number, String n) {
-        BigDecimal gammaFunctionSumAns = new BigDecimal("0");
-        try {
-            for (int i = 0; i<Integer.valueOf(n); i++) {
-
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return gammaFunctionSumAns;
-    }
-    private BigDecimal gammaFunctionInnerFunc(String x, String z) {
-        BigDecimal gammaFuBigDecimalAns = new BigDecimal("0");
-        return gammaFuBigDecimalAns;
     }
 }
