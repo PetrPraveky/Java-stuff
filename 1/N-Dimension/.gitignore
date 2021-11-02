@@ -1,3 +1,6 @@
 .output
 saadImg.png
 18DcubeImg.png
+env/Lib/site-packages
+env/share/man/man1/isympy.1
+env/Scripts/isympy.exe
