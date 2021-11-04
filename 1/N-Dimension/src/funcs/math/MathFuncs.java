@@ -1,13 +1,13 @@
 package funcs.math;
 import java.math.BigInteger;
-import org.python.core.PyInstance;
 
 //My Mathematical supporting functions
 public class MathFuncs {
     // Constants
-    public double e = 2.71828182845904523536028747135266249775724709369995;
+    public double e =  2.71828182845904523536028747135266249775724709369995;
+    public double pi = 3.14159265358979323846264338327950288419716939937510;
     public long inf = Long.MAX_VALUE;
-
+    // Functions
     public long factorial(long number) {
         if (number == 0) {
             return 1;
@@ -46,8 +46,26 @@ public class MathFuncs {
         }
         return String.valueOf(bigAnsPower);
     }
-    public double gammaFunc(double n) {
-        double ans = 0;
-        return ans;
+    public void gammaFunc() {
+
     }
 }
+
+// //Python Interpreter
+// class PythonInt {
+//     PythonInterpreter python = null;
+
+//     public PythonInt()  {
+//         Properties properties = new Properties();
+//         properties.setProperty("python.path", "../lib/python/math");
+//         PythonInterpreter.initialize(System.getProperties(), properties, new String[0]);
+//         this.python = new PythonInterpreter();
+//     }
+
+//     public void execfile(final String fileName) {
+//         this.python.execfile(fileName);
+//     }
+//     public PyInstance createClass(final String className, final String opts) {
+//         return (PyInstance) this.python.eval(className+"("+opts+")");
+//     }
+// }
