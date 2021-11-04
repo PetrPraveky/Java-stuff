@@ -1,5 +1,7 @@
 package funcs.math;
 import java.math.BigInteger;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 //My Mathematical supporting functions
 public class MathFuncs {
@@ -46,26 +48,23 @@ public class MathFuncs {
         }
         return String.valueOf(bigAnsPower);
     }
-    public void gammaFunc() {
-
+    public double gammaFunc(double number) {
+        double ans = 0;
+        try {
+            ProcessBuilder builder = new ProcessBuilder(
+                "python", System.getProperty("user.dir") + "\\lib\\python\\math\\SympymathFuncs.py",
+                String.valueOf("gammaFunc"), String.valueOf(number)
+            );
+            Process process = builder.start();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            try {
+                ans = Double.parseDouble(reader.readLine());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ans;
     }
 }
-
-// //Python Interpreter
-// class PythonInt {
-//     PythonInterpreter python = null;
-
-//     public PythonInt()  {
-//         Properties properties = new Properties();
-//         properties.setProperty("python.path", "../lib/python/math");
-//         PythonInterpreter.initialize(System.getProperties(), properties, new String[0]);
-//         this.python = new PythonInterpreter();
-//     }
-
-//     public void execfile(final String fileName) {
-//         this.python.execfile(fileName);
-//     }
-//     public PyInstance createClass(final String className, final String opts) {
-//         return (PyInstance) this.python.eval(className+"("+opts+")");
-//     }
-// }

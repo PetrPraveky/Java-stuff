@@ -1,10 +1,14 @@
+import sys
 import sympy as sp
 
-# class Hello():
-#     __qui = None
+def gammaFuncAcc(n):
+    print(sp.gamma(n))
+
+if __name__ == "__main__":
+    opt = sys.argv[1]
+    num1 = sys.argv[2]
+    if opt == "gammaFunc":
+        gammaFuncAcc(num1)
+    else:
+        print('Error, wrong opt')
     
-#     def __init__(self, gui):
-#         self.__gui = gui
-        
-def run():
-    print('Hello world!')

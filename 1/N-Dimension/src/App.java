@@ -7,7 +7,7 @@ import funcs.filesys.FolderCreate;
 public class App {
     public static void main(String[] args) throws Exception {
         MathFuncs math = new MathFuncs();
-        math.gammaFunc();
+        System.out.println(math.gammaFunc(2));
         // new FolderCreate();
         // new NellipsoidOut(3);
         // new NcubeGraphAlgs(".", 19);
