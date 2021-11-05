@@ -27,4 +27,23 @@ public class NsphereAlgs {
         }
         return volumeAns;
     }
+    public String surface(int dimension, int r) {
+        String surfaceAns = null;
+        try {
+            ProcessBuilder builder = new ProcessBuilder(
+                "python", System.getProperty("user.dir") + "\\lib\\python\\NsphereAlg.py",
+                String.valueOf("surface"), String.valueOf(dimension), String.valueOf(r)
+            );
+            Process process = builder.start();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            try {
+                surfaceAns = reader.readLine();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return surfaceAns;        
+    }
 }
