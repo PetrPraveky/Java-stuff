@@ -9,5 +9,6 @@ public class NsphereOut {
     public NsphereOut(int dimension, String folder) throws IOException {
         NsphereAlgs cNsphereAlgs = new NsphereAlgs();
         TexCommandsNsphere texCommands = new TexCommandsNsphere();
+        
     }
 }

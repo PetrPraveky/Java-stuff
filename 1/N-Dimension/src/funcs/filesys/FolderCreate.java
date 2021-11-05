@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 import funcs.filesys.tex.TexFileTemp;
+import solids.ellipsoids.NsphereOut;
 import solids.platonic_solids.*;
 
 //Function for creating folders and files with data
@@ -17,8 +18,9 @@ public class FolderCreate {
         if (!mainDir.exists()) {
             mainDir.mkdirs();
         } else {}
-        platonicSolidsOutputs();
-        // ellipsoidsOutput();
+        ellipsoidsOutput();
+        // platonicSolidsOutputs();
+
     }
     private void platonicSolidsOutputs() throws Exception {
         // Platonic solids direcotry
@@ -53,7 +55,7 @@ public class FolderCreate {
             ncubeImg.mkdirs();
         }
         // .tex file creation
-        texFileTemp.texFileBeg();
+        texFileTemp.texFileBeg("./ncubeImg/");
         // Title page
         texFileTemp.texFileTitle("N-Dimensional Cubes");
         // Info Page / Pages
@@ -77,10 +79,15 @@ public class FolderCreate {
         PrintStream out = new PrintStream(new FileOutputStream(nsphereOut), false);
         System.setOut(out);
         // .tex file creation
-        texFileTemp.texFileBeg();
+        texFileTemp.texFileBeg("");
         // Title page
         texFileTemp.texFileTitle("N-Dimensional Spheres");
         // Info Page / Pages
+        texFileTemp.texFileInfoPageNsphere();
+        // Data pages
+        for (int i=0; i<dimNumMax; i++) {
+            new NsphereOut(i, "");
+        }
         System.out.println("\\end{document}");
     }
 }

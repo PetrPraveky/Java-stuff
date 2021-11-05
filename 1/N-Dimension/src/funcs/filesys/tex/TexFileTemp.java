@@ -4,7 +4,7 @@ import funcs.filesys.tex.nd.*;
 
 public class TexFileTemp {
     TexCommandsNcube texCommands = new TexCommandsNcube();
-    public void texFileBeg() {
+    public void texFileBeg(String imgFolder) {
         System.out.println("\\documentclass[a4paper,10pt]{article}\n");
         System.out.println("\\renewcommand{\\familydefault}{\\sfdefault}\n");
 
@@ -15,7 +15,7 @@ public class TexFileTemp {
         System.out.println("\\usepackage{blindtext}\n");
         System.out.println("\\usepackage{xfrac}");
 
-        System.out.println("\\graphicspath{{./ncubeImg/}}");
+        System.out.println("\\graphicspath{{"+imgFolder+"}}");
 
         System.out.println("\\begin{document}");
     }
@@ -190,6 +190,7 @@ public class TexFileTemp {
         System.out.println("\\centerline{\\Large{\\textbf{N-Dimensional Sphere Terminology and Formulas}}}");
         texCommands.texMiddleLine(1);
         System.out.println("\\begin{flushleft}");
+        
         System.out.println("\\end{flushleft}");
         System.out.println("\\newpage");
     }
