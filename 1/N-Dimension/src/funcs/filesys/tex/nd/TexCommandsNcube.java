@@ -131,7 +131,7 @@ public class TexCommandsNcube {
             if (ans==Math.floor(ans)) {
                 System.out.println("$"+r+"\\sqrt{"+dimension+"}\\quad;\\quad"+((int)ans)+"$");
             } else {
-                System.out.println("$"+r+"\\sqrt{"+dimension+"}\\quad;\\quad"+String.format("%.7g%n", ans)+"...$");
+                System.out.println("$"+r+"\\sqrt{"+dimension+"}\\quad;\\quad"+"\\approx"+String.format("%.7g%n", ans)+"...$");
             }
         }
         System.out.println("\\end{flushright}");

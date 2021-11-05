@@ -1,7 +1,5 @@
 package funcs.math;
 import java.math.BigInteger;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 //My Mathematical supporting functions
 public class MathFuncs {
@@ -47,24 +45,5 @@ public class MathFuncs {
             bigAnsPower = bigAnsPower.multiply(bigBase);
         }
         return String.valueOf(bigAnsPower);
-    }
-    public double gammaFunc(double number) {
-        double ans = 0;
-        try {
-            ProcessBuilder builder = new ProcessBuilder(
-                "python", System.getProperty("user.dir") + "\\lib\\python\\math\\SympymathFuncs.py",
-                String.valueOf("gammaFunc"), String.valueOf(number)
-            );
-            Process process = builder.start();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            try {
-                ans = Double.parseDouble(reader.readLine());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return ans;
     }
 }
