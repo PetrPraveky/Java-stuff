@@ -3,16 +3,16 @@ package funcs.filesys;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-
 import funcs.filesys.tex.TexFileTemp;
-import solids.ellipsoids.NsphereOut;
+import solids.ellipsoids.NsphereEllOut;
 import solids.platonic_solids.*;
 
 //Function for creating folders and files with data
 public class FolderCreate {
-    File mainDir = new File(".output");
+    File mainDir = new File(".output");;
     TexFileTemp texFileTemp = new TexFileTemp();
     int dimNumMax = 21;
+    
     public FolderCreate() throws Exception {
         // Main answer directory
         if (!mainDir.exists()) {
@@ -20,7 +20,6 @@ public class FolderCreate {
         } else {}
         ellipsoidsOutput();
         // platonicSolidsOutputs();
-
     }
     private void platonicSolidsOutputs() throws Exception {
         // Platonic solids direcotry
@@ -81,12 +80,12 @@ public class FolderCreate {
         // .tex file creation
         texFileTemp.texFileBeg("");
         // Title page
-        texFileTemp.texFileTitle("N-Dimensional Spheres");
+        texFileTemp.texFileTitle("N-Dimensional Spheres & Ellipsoids");
         // Info Page / Pages
         texFileTemp.texFileInfoPageNsphere();
         // Data pages
-        for (int i=2; i<dimNumMax; i++) {
-            new NsphereOut(i, "");
+        for (int i=1; i<dimNumMax; i++) {
+            new NsphereEllOut(i, "");
         }
         System.out.println("\\end{document}");
     }

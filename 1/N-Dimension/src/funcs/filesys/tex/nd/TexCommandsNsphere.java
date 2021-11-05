@@ -6,8 +6,13 @@ public class TexCommandsNsphere {
     MathFuncs math = new MathFuncs();
     public void texTitleOneNsphereCommand(int dimension) {
         String name = "";
-        if (dimension == 2) {
+        if (dimension == 0) {
+            name = " (Line segment)";
+        }
+        else if (dimension == 1) {
             name = " (Circle)";
+        } else if (dimension == 2){
+            name = " (Sphere)";
         } else {}
         System.out.println("\\centerline{\\Large{\\textbf{"+dimension+"-Sphere"+name+"}}}");
         System.out.println("\\bigskip");

@@ -1,6 +1,5 @@
 package solids.ellipsoids.nspehre;
 
-import java.math.BigDecimal;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
