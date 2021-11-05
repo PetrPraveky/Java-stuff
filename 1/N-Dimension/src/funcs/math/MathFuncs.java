@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class MathFuncs {
     // Constants
     public double e =  2.71828182845904523536028747135266249775724709369995;
-    public double pi = 3.14159265358979323846264338327950288419716939937510;
+    public double pi = 3.14159265358979323846264338;//327950288419716939937510;
     public long inf = Long.MAX_VALUE;
     // Functions
     public long factorial(long number) {
