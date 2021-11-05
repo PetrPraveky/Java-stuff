@@ -85,7 +85,7 @@ public class FolderCreate {
         // Info Page / Pages
         texFileTemp.texFileInfoPageNsphere();
         // Data pages
-        for (int i=0; i<dimNumMax; i++) {
+        for (int i=2; i<dimNumMax; i++) {
             new NsphereOut(i, "");
         }
         System.out.println("\\end{document}");
