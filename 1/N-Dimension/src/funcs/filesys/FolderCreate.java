@@ -80,7 +80,7 @@ public class FolderCreate {
         // .tex file creation
         texFileTemp.texFileBeg("");
         // Title page
-        texFileTemp.texFileTitle("N-Dimensional Spheres & Ellipsoids");
+        texFileTemp.texFileTitle("N-Dimensional Spheres \\& Ellipsoids");
         // Info Page / Pages
         texFileTemp.texFileInfoPageNsphere();
         // Data pages

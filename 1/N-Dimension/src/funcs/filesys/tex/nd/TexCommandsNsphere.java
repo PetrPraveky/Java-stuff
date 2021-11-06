@@ -8,10 +8,9 @@ public class TexCommandsNsphere {
         String name = "";
         if (dimension == 0) {
             name = " (Line segment)";
-        }
-        else if (dimension == 1) {
+        } else if (dimension == 1) {
             name = " (Circle)";
-        } else if (dimension == 2){
+        } else if (dimension == 2) {
             name = " (Sphere)";
         } else {}
         System.out.println("\\centerline{\\Large{\\textbf{"+dimension+"-Sphere"+name+"}}}");
