@@ -152,6 +152,18 @@ public class NsphereEllOut {
             texCommands2.tex2ColumnDataNellipseCommand("\\approx "+String.format("%.7g%n", (new BigDecimal(nellipsoidAlgs.volume(dimension, 2)))), "Area for $r = 2$");
             texCommands2.tex2ColumnDataNellipseCommand("\\approx "+String.format("%.7g%n", (new BigDecimal(nellipsoidAlgs.volume(dimension, 4)))), "Area for $r = 4$");        } else {
             String volume1 = String.format("%.7g%n", (new BigDecimal(nellipsoidAlgs.volume(dimension, 1))));
+            int r1 = 1; String r1String = "a_{1} = 1";
+            if (dimension < 5) {
+                for (int i = 1; i<dimension; i++) {
+                    r1 = r1+1;
+                    r1String = r1String+";   a_{"+(i+1)+"} = "+r1;
+                }
+            } else {
+                for (int i = 1; i<dimension; i++) {
+                    r1 = r1+1;
+                }
+                r1String = "a_{1} = 2;   a_{2} = 4 ;   ... ;   a_{"+dimension+"} = "+r1;
+            }
             try {
                 int pos = (volume1.indexOf("e"));
                 String volA1 = volume1.substring(0, pos);
@@ -182,6 +194,18 @@ public class NsphereEllOut {
                 texCommands2.tex2ColumnDataNellipseCommand("\\approx "+volume1, "Volume for $"+r2String+"$");
             }
             volume1 = String.format("%.7g%n", (new BigDecimal(nellipsoidAlgs.volume(dimension, 4))));
+            int r3 = 4; String r3String = "a_{1} = 4";
+            if (dimension < 5) {
+                for (int i = 1; i<dimension; i++) {
+                    r3 = r3+4;
+                    r3String = r3String+";   a_{"+(i+1)+"} = "+r3;
+                }
+            } else {
+                for (int i = 1; i<dimension; i++) {
+                    r3 = r3+4;
+                }
+                r3String = "a_{1} = 2;   a_{2} = 4 ;   ... ;   a_{"+dimension+"} = "+r3;
+            }
             try {
                 int pos = (volume1.indexOf("e"));
                 String volA1 = volume1.substring(0, pos);
