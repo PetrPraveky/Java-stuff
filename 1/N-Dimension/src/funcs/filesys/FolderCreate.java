@@ -11,7 +11,7 @@ import solids.platonic_solids.*;
 public class FolderCreate {
     File mainDir = new File(".output");;
     TexFileTemp texFileTemp = new TexFileTemp();
-    int dimNumMax = 6;
+    int dimNumMax = 21;
     
     public FolderCreate() throws Exception {
         // Main answer directory

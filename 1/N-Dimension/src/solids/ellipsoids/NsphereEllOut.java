@@ -110,7 +110,6 @@ public class NsphereEllOut {
             }
         }
         System.out.println("\\bigskip");
-        System.out.println("\\bigskip");
         // N-Ellipsoid
         NellipsoidAlgs nellipsoidAlgs = new NellipsoidAlgs();
         TexCommandsNellip texCommands2 = new TexCommandsNellip();
@@ -157,12 +156,12 @@ public class NsphereEllOut {
             texCommands2.texTitleVolumeNellipseEqCommand(dimension, "Lenght equation for "+dimension+"-Ellipsoid");
         } else if (dimension == 2) {
             // Surface eq
-            texCommands2.texTitleSurfaceNellipseEqCommand("t", "Perimeter equation for "+dimension+"-Ellipsoid");
+            texCommands2.texTitleSurfaceNellipseEqCommand(dimension, "Perimeter equation for "+dimension+"-Ellipsoid");
             // Volume eq
             texCommands2.texTitleVolumeNellipseEqCommand(dimension, "Area equation for "+dimension+"-Ellipsoid");
         } else {
             // Surface eq
-            texCommands2.texTitleSurfaceNellipseEqCommand("t", "Surface equation for "+dimension+"-Ellipsoid");
+            texCommands2.texTitleSurfaceNellipseEqCommand(dimension, "Surface equation for "+dimension+"-Ellipsoid");
             // Volume eq
             texCommands2.texTitleVolumeNellipseEqCommand(dimension, "Volume equation for "+dimension+"-Ellipsoid");
         }

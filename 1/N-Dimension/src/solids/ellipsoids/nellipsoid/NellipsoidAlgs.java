@@ -45,8 +45,27 @@ public class NellipsoidAlgs {
         }
         return surfaceAns;        
     }
-    // public String surfaceEq(int dimension) {
-    //     String surfaceEqAns = null;
-
-    // }
+    public String surfaceEq(int dimension) {
+        StringBuilder surfaceEqAns = new StringBuilder(); 
+        String line;
+        try {
+            ProcessBuilder builder = new ProcessBuilder(
+                "python", System.getProperty("user.dir") + "\\lib\\python\\NsphereAlg.py",
+                String.valueOf("surfaceEq"), String.valueOf(dimension), "1"
+            );
+            Process process = builder.start();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            try {
+                while ((line = reader.readLine()) != null) {
+                    if (String.valueOf(line).equals("1")) {
+                    } else {surfaceEqAns.append(line);}
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return String.valueOf(surfaceEqAns);        
+    }
 }
