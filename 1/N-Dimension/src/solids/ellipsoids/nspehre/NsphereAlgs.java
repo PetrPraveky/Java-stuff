@@ -57,7 +57,7 @@ public class NsphereAlgs {
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             try {
                 while ((line = reader.readLine()) != null) {
-                    if (String.valueOf(line).equals("1") || String.valueOf(line).equals("2")) {
+                    if (String.valueOf(line).equals("1")) {
                     } else {volumeEqAns.append(line);}
                 }
             } catch (Exception e) {

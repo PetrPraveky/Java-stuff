@@ -14,6 +14,7 @@ public class TexFileTemp {
         System.out.println("\\usepackage[english]{babel}");
         System.out.println("\\usepackage{blindtext}\n");
         System.out.println("\\usepackage{xfrac}");
+        System.out.println("\\usepackage{yfonts}");
 
         System.out.println("\\graphicspath{{"+imgFolder+"}}");
 
@@ -45,7 +46,6 @@ public class TexFileTemp {
                 certain length; Face is two dimensional part of object, square, made of four same edges; And Cell is third dimensional part of object, cube, made of six same
                 faces. You can find number of those in higher dimensional cubes later in this document.
             }
-
         """);
         System.out.println("\\vspace{-5pt}");
         System.out.println("""
@@ -187,14 +187,111 @@ public class TexFileTemp {
         System.out.println("\\newpage");
     }
     public void texFileInfoPageNsphere() {
-        System.out.println("\\centerline{\\Large{\\textbf{N-Dimensional Sphere \\& Ellipsoid Terminology and Formulas}}}");
+        System.out.println("\\centerline{\\Large{\\textbf{N-Dimensional Cube Terminology and Formulas}}}");
         texCommands.texMiddleLine(1);
         System.out.println("\\begin{flushleft}");
-        
+        System.out.println("""
+            \\null\\large{\\quad Firstly let me talk about some terminilogy used in this document. There are some terms, that are not that obvious or maybe 
+            could mean something different than usual, so I will try my best to explain them.
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+            \\null\\large{
+                \\quad N-dimensional sphere and ellipsoid is defined as $n$ surface and $n+1$ ball ($n+1$ volume).
+                So for example \"3-sphere\" is sphere in fourth dimension. All semiaxes in n-ellipsoid are defined by this infinite series with lenght $l$:} \\newline
+                \\null\\centerline{
+                    \\Large{
+                        $(a_{n})^{\\infty}_{n=1} \\quad ; \\quad a_{n+1}=a_{n}+l \\quad ; \\quad a_{1}=l$
+                    }
+                }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+        \\null\\large{
+            \\quad Now, lets talk about \"Volume\" \\& \"Surface\" of n-sphere. Firstly about volume. Volume is defined by this equation using Euler's gamma function and
+            radius $r$:} \\newline
+            \\null\\centerline{
+                \\Large{
+                    $V_{sn} = \\frac{\\pi^{\\frac{n}{2}}}{\\Gamma(\\frac{n}{2}-1)}r^{n}$
+                }
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+        \\null\\large{
+            \\quad Surface of n-sphere is defined again by equation using radius $r$ and gamma function:} \\newline
+            \\null\\centerline{
+                \\Large{
+                    $S_{sn} = \\frac{2\\pi^{\\frac{n}{2}}}{\\Gamma(\\frac{n}{2})}r^{n-1}$
+                }
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+        \\null\\large{
+            \\quad Volume for n-ellipsoids is very simillar to volume of n-spheres. Instead of one radius $r$, there are used all semiaxis $a$. So the final
+            equation looks like this:} \\newline
+            \\null\\centerline{
+                \\Large{
+                    $V_{en} = \\frac{\\pi^{\\frac{n}{2}}}{\\Gamma(\\frac{n}{2}-1)}a_{1}\\times{a_{2}}\\times{...}\\times{a_{n}}$
+                }
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+        \\null\\large{
+            \\quad Equation for surface of n-ellipsoid is little bit more different then equation for surface of n-shpere. Base is same, but instead of $r$,
+            there is used approximate equation. Output of this equation is more or less equal to $r^{n-1}$ in equation for surface of n-sphere.
+            This equation looks like this:} \\newline
+            \\null\\centerline{
+                \\Large{
+                    $\\textfrak{m}=(\\frac{1}{n}\\sum_{i=1}^{\\infty}x_{i}^{p})^{p}$}
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+        \\null\\large{
+            \\quad where constant $p=1.6075$ and $x$ is certain multiplication of semiaxis a. It is defined like this:} \\newline
+            \\null\\centerline{
+                \\Large{
+                    $x_{1}=a_{1}\\times{a_{2}}\\times{...}\\times{a_{n-1}}$}
+            }
+            \\null\\centerline{
+                \\Large{
+                    $x_{2}=a_{2}\\times{a_{3}}\\times{...}\\times{a_{n}}$}
+            }
+            \\null\\centerline{
+                \\Large{
+                    $x_{3}=a_{3}\\times{a_{4}}\\times{...}\\times{a_{n}}\\times{a_{1}}$}
+            }
+            \\null\\centerline{
+                \\Large{
+                    $.$}
+            }
+            \\null\\centerline{
+                \\Large{
+                    $.$}
+            }
+            \\null\\centerline{
+                \\Large{
+                    $.$}
+            }
+            \\null\\centerline{
+                \\Large{
+                    $x_{n}=a_{n}\\times{a_{1}}\\times{...}\\times{a_{n-2}}$}
+            }
+        """);
+        System.out.println("\\vspace{-5pt}");
+        System.out.println("""
+        \\null\\large{
+            \\quad So the final equation for surface looks like this:} \\newline
+            \\null\\centerline{
+                \\Large{
+                    $S_{en} = \\frac{2\\pi^{\\frac{n}{2}}}{\\Gamma(\\frac{n}{2})}\\textfrak{m}\\quad ; \\quad S_{en} = \\frac{2\\pi^{\\frac{n}{2}}}{\\Gamma(\\frac{n}{2})}(\\frac{1}{n}\\sum_{i=1}^{\\infty}x_{i}^{p})^{p}$}
+            }
+        """);
         System.out.println("\\end{flushleft}");
         System.out.println("\\newpage");
-    }
-    public void texFileInfoPageNellip() {
-
     }
 }
