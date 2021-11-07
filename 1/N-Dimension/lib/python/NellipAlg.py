@@ -17,8 +17,28 @@ def volume(n, r):
     
 def surface(n, r):
     A = sp.Symbol('A')
-    # ans = sp.Eq(A, ((2*sp.pi**(n/2)*(r**(n-1)))/sp.gamma(n/2)))
-    # print(sp.solve(ans)[0])
+    rSum = r; rList = [rSum]; rAns = 0; rAnsPow = 1; p = 1.6075
+    i = 1; c = 0; d = 0; coef = 0
+    while i < n:
+        rSum = rSum+r
+        rList.append(rSum)
+        i += 1
+    for j in range(n):
+        for k in range(n-1):
+            if (k+c) == n:
+                coef = 0
+            elif (k+c) > n:
+                coef = d+1
+                d += 1
+            else:
+                coef = k+c
+            rAnsPow = rAnsPow*rList[coef]
+        rAns = rAns+(rAnsPow**p)
+        rAnsPow = 1
+        c += 1; d = 0
+    
+    ans = sp.Eq(A, (((2*sp.pi**(n/2))/sp.gamma(n/2))*(((rAns)/(n))**(1/p))))
+    print(sp.solve(ans)[0])
 
 if __name__ == "__main__":
     opt = sys.argv[1]

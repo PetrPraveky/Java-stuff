@@ -35,7 +35,7 @@ public class FolderCreate {
         if (!ellDir.exists()) {
             ellDir.mkdirs();
         } else {}
-        nsphereOutput(ellDir);
+        nEllipOutput(ellDir);
     }
     private void ncubeOutput(File file) throws Exception {
         // Ncube data file & folder
@@ -65,13 +65,9 @@ public class FolderCreate {
         }
         System.out.println("\\end{document}");
     }
-    private void nsphereOutput(File file) throws Exception {
-        // Nsphere data file & folder
-        File nshepreDir = new File(file+"/nspehre");
-        if (!nshepreDir.exists()) {
-            nshepreDir.mkdirs();
-        } else {}
-        File nsphereOut = new File(nshepreDir+"/nsphereData.tex");
+    private void nEllipOutput(File file) throws Exception {
+        // Nell data file & folder
+        File nsphereOut = new File(file+"/nEllipData.tex");
         if (!nsphereOut.exists()) {
             nsphereOut.createNewFile();
         }
