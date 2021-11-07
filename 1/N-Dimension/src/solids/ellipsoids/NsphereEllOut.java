@@ -14,8 +14,23 @@ public class NsphereEllOut {
         NsphereAlgs nSphereAlgs = new NsphereAlgs();
         TexCommandsNsphere texCommands = new TexCommandsNsphere();
         texCommands.texTitleOneNsphereCommand((dimension-1));
-        // Data
         texCommands.texMiddleLine(1);
+        // Data
+        if (dimension == 1) {
+            // Volume eq
+            texCommands.texTitleVolumeNsphereEqCommand(dimension, "Lenght equation for "+dimension+"-Shpere");
+        } else if (dimension == 2) {
+            // Surface eq
+            texCommands.texTitleSurfaceNsphereEqCommand(dimension, "Perimeter equation for "+dimension+"-Sphere");
+            // Volume eq
+            texCommands.texTitleVolumeNsphereEqCommand(dimension, "Area equation for "+dimension+"-Sphere");
+        } else {
+            // Surface eq
+            texCommands.texTitleSurfaceNsphereEqCommand(dimension, "Surface equation for "+dimension+"-Sphere");
+            // Volume eq
+            texCommands.texTitleVolumeNsphereEqCommand(dimension, "Volume equation for "+dimension+"-Sphere");
+        }
+        texCommands.texMiddleLine(0.2);
         // Surface
         if (dimension != 1) {
             texCommands.texTitleSurfaceNSphereCommand((dimension-1));
@@ -136,8 +151,23 @@ public class NsphereEllOut {
             r3String = "a_{1} = 4;   a_{2} = 8 ;   ... ;   a_{"+dimension+"} = "+r3;
         }
         texCommands2.texTitleOneNellipseCommand((dimension-1));
-        // Data
         texCommands2.texMiddleLine(1);
+        if (dimension == 1) {
+            // Volume eq
+            texCommands2.texTitleVolumeNellipseEqCommand(dimension, "Lenght equation for "+dimension+"-Ellipsoid");
+        } else if (dimension == 2) {
+            // Surface eq
+            texCommands2.texTitleSurfaceNellipseEqCommand("t", "Perimeter equation for "+dimension+"-Ellipsoid");
+            // Volume eq
+            texCommands2.texTitleVolumeNellipseEqCommand(dimension, "Area equation for "+dimension+"-Ellipsoid");
+        } else {
+            // Surface eq
+            texCommands2.texTitleSurfaceNellipseEqCommand("t", "Surface equation for "+dimension+"-Ellipsoid");
+            // Volume eq
+            texCommands2.texTitleVolumeNellipseEqCommand(dimension, "Volume equation for "+dimension+"-Ellipsoid");
+        }
+        // Data
+        texCommands2.texMiddleLine(0.2);
         // Surface
         if (dimension != 1) {
             texCommands2.texTitleSurfaceNellipseCommand((dimension-1));

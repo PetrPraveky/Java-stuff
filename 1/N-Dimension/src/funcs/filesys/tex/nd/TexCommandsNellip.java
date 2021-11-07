@@ -35,6 +35,28 @@ public class TexCommandsNellip {
     public void texMiddleLine(double size) {
         System.out.println("\\centerline{\\par\\noindent\\rule{0.975\\textwidth}{"+size+"pt}}");
     }
+    public void texTitleSurfaceNellipseEqCommand(String eq, String name) {
+        System.out.println("\\begin{multicols}{2}");
+        System.out.println("\\begin{flushleft}");
+        System.out.println("\\textbf{- "+name+":}");
+        System.out.println("\\end{flushleft}");
+        System.out.println("\\columnbreak");
+        System.out.println("\\begin{flushright}");
+        System.out.println("\\textbf{$"+eq+"$}");
+        System.out.println("\\end{flushright}");
+        System.out.println("\\end{multicols}");  
+    }
+    public void texTitleVolumeNellipseEqCommand(int dimension, String name) {
+        System.out.println("\\begin{multicols}{2}");
+        System.out.println("\\begin{flushleft}");
+        System.out.println("\\textbf{- "+name+":}");
+        System.out.println("\\end{flushleft}");
+        System.out.println("\\columnbreak");
+        System.out.println("\\begin{flushright}");
+        System.out.println("\\textbf{$lol$}");
+        System.out.println("\\end{flushright}");
+        System.out.println("\\end{multicols}");  
+    }
     public void tex2ColumnDataNellipseCommand(String count, String name) {
         System.out.println("\\begin{multicols}{2}");
         System.out.println("\\begin{flushleft}");

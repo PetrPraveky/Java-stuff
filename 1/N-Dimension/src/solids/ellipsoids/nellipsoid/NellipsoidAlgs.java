@@ -45,4 +45,8 @@ public class NellipsoidAlgs {
         }
         return surfaceAns;        
     }
+    // public String surfaceEq(int dimension) {
+    //     String surfaceEqAns = null;
+
+    // }
 }
