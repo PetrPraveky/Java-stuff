@@ -19,7 +19,7 @@ public class FolderCreate {
             mainDir.mkdirs();
         } else {}
         ellipsoidsOutput();
-        // platonicSolidsOutputs();
+        platonicSolidsOutputs();
     }
     private void platonicSolidsOutputs() throws Exception {
         // Platonic solids direcotry

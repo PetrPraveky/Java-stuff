@@ -8,7 +8,7 @@ import funcs.filesys.tex.nd.TexCommandsNellip;
 // Program for computing stuff for higher dimensions
 public class App {
     public static void main(String[] args) throws Exception {
-        NsphereAlgs algs = new NsphereAlgs();
+        // NsphereAlgs algs = new NsphereAlgs();
         // System.out.println((algs.surface(4, 1)));
         // System.out.println(algs.volumeEq(1));
         // System.out.println(algs.volumeEq(4));
